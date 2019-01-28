@@ -196,6 +196,35 @@ func UpdateUIThemePost(ctx *context.Context, form auth.UpdateThemeForm) {
 	ctx.Redirect(setting.AppSubURL + "/user/settings/account")
 }
 
+// UpdateUIDetailLevelPost is used to update users' specific detail level
+func UpdateUIDetailLevelPost(ctx *context.Context, form auth.UpdateDetailLevelForm) {
+
+	ctx.Data["Title"] = ctx.Tr("settings")
+	ctx.Data["PageIsSettingsAccount"] = true
+
+	if ctx.HasError() {
+		ctx.Flash.Error(ctx.Tr("settings.detail_level_update_error"))
+		ctx.Redirect(setting.AppSubURL + "/user/settings/account")
+		return
+	}
+
+	if !form.IsDetailLevelExists() {
+		ctx.Flash.Error(ctx.Tr("settings.detail_level_update_error"))
+		ctx.Redirect(setting.AppSubURL + "/user/settings/account")
+		return
+	}
+
+	if err := ctx.User.UpdateDetailLevel(form.DetailLevel); err != nil {
+		ctx.Flash.Error(ctx.Tr("settings.detail_level_update_error"))
+		ctx.Redirect(setting.AppSubURL + "/user/settings/account")
+		return
+	}
+
+	log.Trace("Update user detail level: %s", ctx.User.Name)
+	ctx.Flash.Success(ctx.Tr("settings.detail_level_update_success"))
+	ctx.Redirect(setting.AppSubURL + "/user/settings/account")
+}
+
 func loadAccountData(ctx *context.Context) {
 	emails, err := models.GetEmailAddresses(ctx.User.ID)
 	if err != nil {

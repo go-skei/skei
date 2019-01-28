@@ -244,6 +244,7 @@ func RegisterRoutes(m *macaron.Macaron) {
 			m.Post("/email/delete", userSetting.DeleteEmail)
 			m.Post("/delete", userSetting.DeleteAccount)
 			m.Post("/theme", bindIgnErr(auth.UpdateThemeForm{}), userSetting.UpdateUIThemePost)
+			m.Post("/detail_level", bindIgnErr(auth.UpdateDetailLevelForm{}), userSetting.UpdateUIDetailLevelPost)
 		})
 		m.Group("/security", func() {
 			m.Get("", userSetting.Security)
@@ -294,6 +295,7 @@ func RegisterRoutes(m *macaron.Macaron) {
 	}, reqSignIn, func(ctx *context.Context) {
 		ctx.Data["PageIsUserSettings"] = true
 		ctx.Data["AllThemes"] = setting.UI.Themes
+		ctx.Data["AllDetailLevels"] = setting.UI.DetailLevels
 	})
 
 	m.Group("/user", func() {

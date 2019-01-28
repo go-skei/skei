@@ -123,6 +123,44 @@
 			</form>
 			</div>
 		</div>
+		<h4 class="ui top attached header">
+			{{.i18n.Tr "settings.manage_detail_level"}}
+		</h4>
+		<div class="ui attached segment">
+			<div class="ui email list">
+				<div class="item">
+					{{.i18n.Tr "settings.detail_level_desc"}}
+				</div>
+
+			<form class="ui form" action="{{.Link}}/detail_level" method="post">
+				{{.CsrfTokenHtml}}
+					<div class="field">
+						<label for="ui">{{.i18n.Tr "settings.ui"}}</label>
+						<div class="ui selection dropdown" id="ui">
+							<input name="detail_level" type="hidden" value="{{.SignedUser.DetailLevel}}">
+							<i class="dropdown icon"></i>
+							<div class="text">
+								{{range $i,$a := .AllDetailLevels}}
+								    {{if eq $.SignedUser.DetailLevel $a}}{{$a}}{{end}}
+								{{end}}
+							</div>
+
+							<div class="menu">
+							{{range $i,$a := .AllDetailLevels}}
+								<div class="item{{if eq $.SignedUser.DetailLevel $a}} active selected{{end}}" data-value="{{$a}}">
+									{{$a}}
+								</div>
+							{{end}}
+							</div>
+						</div>
+					</div>
+
+				<div class="field">
+					<button class="ui green button">{{$.i18n.Tr "settings.update_detail_level"}}</button>
+				</div>
+			</form>
+			</div>
+		</div>
 		<h4 class="ui top attached warning header">
 			{{.i18n.Tr "settings.delete_account"}}
 		</h4>
