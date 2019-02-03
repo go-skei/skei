@@ -7,16 +7,16 @@
 	</a>
 	<div class="content">
 		<div class="ui top attached header">
-			<span class="text grey"><a {{if gt .Poster.ID 0}}href="{{.Poster.HomeLink}}"{{end}}>{{.Poster.Name}}</a> {{$.root.i18n.Tr "repo.issues.commented_at" .HashTag $createdStr | Safe}}</span>
+			<span class="text grey"><a {{if gt .Poster.ID 0}}href="{{.Poster.HomeLink}}"{{end}}>{{.Poster.Name}}</a> {{$.root.dlt.Tr "repo.issues.commented_at" .HashTag $createdStr | Safe}}</span>
 			<div class="ui right actions">
 			{{if and .Review}}
 				{{if eq .Review.Type 0}}
 					<div class="item tag">
-					{{$.root.i18n.Tr "repo.issues.review.pending"}}
+					{{$.root.dlt.Tr "repo.issues.review.pending"}}
 					</div>
 				{{else}}
 					<div class="item tag">
-					{{$.root.i18n.Tr "repo.issues.review.review"}}
+					{{$.root.dlt.Tr "repo.issues.review.review"}}
 					</div>
 				{{end}}
 			{{end}}
@@ -24,7 +24,7 @@
 			{{if or $.root.Permission.IsAdmin (eq .Poster.ID $.root.SignedUserID)}}
 				<div class="item action">
 					<a class="edit-content" href="#"><i class="octicon octicon-pencil"></i></a>
-					<a class="delete-comment" href="#" data-comment-id={{.HashTag}} data-url="{{$.root.RepoLink}}/comments/{{.ID}}/delete" data-locale="{{$.root.i18n.Tr "repo.issues.delete_comment_confirm"}}"><i class="octicon octicon-x"></i></a>
+					<a class="delete-comment" href="#" data-comment-id={{.HashTag}} data-url="{{$.root.RepoLink}}/comments/{{.ID}}/delete" data-locale="{{$.root.dlt.Tr "repo.issues.delete_comment_confirm"}}"><i class="octicon octicon-x"></i></a>
 				</div>
 			{{end}}
 			</div>
@@ -34,7 +34,7 @@
 			{{if .RenderedContent}}
 				{{.RenderedContent|Str2html}}
 			{{else}}
-				<span class="no-content">{{$.root.i18n.Tr "repo.issues.no_content"}}</span>
+				<span class="no-content">{{$.root.dlt.Tr "repo.issues.no_content"}}</span>
 			{{end}}
 			</div>
 			<div class="raw-content hide">{{.Content}}</div>

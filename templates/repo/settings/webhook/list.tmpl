@@ -1,9 +1,9 @@
 {{template "base/alert" .}}
 <h4 class="ui top attached header">
-	{{.i18n.Tr "repo.settings.hooks"}}
+	{{.dlt.Tr "repo.settings.hooks"}}
 	<div class="ui right">
 		<div class="ui floating1 jump dropdown">
-			<div class="ui blue tiny button">{{.i18n.Tr "repo.settings.add_webhook"}}</div>
+			<div class="ui blue tiny button">{{.dlt.Tr "repo.settings.add_webhook"}}</div>
 			<div class="menu">
 				<a class="item" href="{{.BaseLink}}/settings/hooks/gitea/new">
 					<img class="img-10" src="{{AppSubUrl}}/img/gitea-sm.png">Gitea

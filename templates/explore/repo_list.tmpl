@@ -27,11 +27,11 @@
 				{{end}}
 				</div>
 			{{end}}
-			<p class="time">{{$.i18n.Tr "org.repo_updated"}} {{TimeSinceUnix .UpdatedUnix $.i18n.Lang}}</p>
+			<p class="time">{{$.dlt.Tr "org.repo_updated"}} {{TimeSinceUnix .UpdatedUnix $.i18n.Lang}}</p>
 		</div>
 	{{else}}
 	<div>
-		{{$.i18n.Tr "explore.repo_no_results"}}
+		{{$.dlt.Tr "explore.repo_no_results"}}
 	</div>
 	{{end}}
 </div>

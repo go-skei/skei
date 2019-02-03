@@ -5,31 +5,31 @@
 			<form class="ui form" action="{{.Link}}" method="post">
 				{{.CsrfTokenHtml}}
 				<h3 class="ui top attached header">
-					{{.i18n.Tr "new_migrate"}}
+					{{.dlt.Tr "new_migrate"}}
 				</h3>
 				<div class="ui attached segment">
 					{{template "base/alert" .}}
 					<div class="inline required field {{if .Err_CloneAddr}}error{{end}}">
-						<label for="clone_addr">{{.i18n.Tr "repo.migrate.clone_address"}}</label>
+						<label for="clone_addr">{{.dlt.Tr "repo.migrate.clone_address"}}</label>
 						<input id="clone_addr" name="clone_addr" value="{{.clone_addr}}" autofocus required>
 						<span class="help">
-						{{.i18n.Tr "repo.migrate.clone_address_desc"}}{{if .ContextUser.CanImportLocal}} {{.i18n.Tr "repo.migrate.clone_local_path"}}{{end}}
-						{{if .LFSActive}}<br/>{{.i18n.Tr "repo.migrate.lfs_mirror_unsupported"}}{{end}}
+						{{.dlt.Tr "repo.migrate.clone_address_desc"}}{{if .ContextUser.CanImportLocal}} {{.dlt.Tr "repo.migrate.clone_local_path"}}{{end}}
+						{{if .LFSActive}}<br/>{{.dlt.Tr "repo.migrate.lfs_mirror_unsupported"}}{{end}}
 						</span>
 					</div>
 					<div class="ui accordion optional field">
 						<div class="title {{if .Err_Auth}}text red active{{end}}">
 							<i class="icon dropdown"></i>
-							{{.i18n.Tr "repo.need_auth"}}
+							{{.dlt.Tr "repo.need_auth"}}
 						</div>
 						<div class="content {{if .Err_Auth}}active{{end}}">
 							<div class="inline field {{if .Err_Auth}}error{{end}}">
-								<label for="auth_username">{{.i18n.Tr "username"}}</label>
+								<label for="auth_username">{{.dlt.Tr "username"}}</label>
 								<input id="auth_username" name="auth_username" value="{{.auth_username}}" {{if not .auth_username}}data-need-clear="true"{{end}}>
 							</div>
 							<input class="fake" type="password">
 							<div class="inline field {{if .Err_Auth}}error{{end}}">
-								<label for="auth_password">{{.i18n.Tr "password"}}</label>
+								<label for="auth_password">{{.dlt.Tr "password"}}</label>
 								<input id="auth_password" name="auth_password" type="password" value="{{.auth_password}}">
 							</div>
 						</div>
@@ -38,7 +38,7 @@
 					<div class="ui divider"></div>
 
 					<div class="inline required field {{if .Err_Owner}}error{{end}}">
-						<label>{{.i18n.Tr "repo.owner"}}</label>
+						<label>{{.dlt.Tr "repo.owner"}}</label>
 						<div class="ui selection owner dropdown">
 							<input type="hidden" id="uid" name="uid" value="{{.ContextUser.ID}}" required>
 							<span class="text">
@@ -62,39 +62,39 @@
 					</div>
 
 					<div class="inline required field {{if .Err_RepoName}}error{{end}}">
-						<label for="repo_name">{{.i18n.Tr "repo.repo_name"}}</label>
+						<label for="repo_name">{{.dlt.Tr "repo.repo_name"}}</label>
 						<input id="repo_name" name="repo_name" value="{{.repo_name}}" required>
 					</div>
 					<div class="inline field">
-						<label>{{.i18n.Tr "repo.visibility"}}</label>
+						<label>{{.dlt.Tr "repo.visibility"}}</label>
 						<div class="ui checkbox">
 							{{if .IsForcedPrivate}}
 								<input name="private" type="checkbox" checked readonly>
-								<label>{{.i18n.Tr "repo.visibility_helper_forced" | Safe}}</label>
+								<label>{{.dlt.Tr "repo.visibility_helper_forced" | Safe}}</label>
 							{{else}}
 								<input name="private" type="checkbox" {{if .private}}checked{{end}}>
-								<label>{{.i18n.Tr "repo.visibility_helper" | Safe}}</label>
+								<label>{{.dlt.Tr "repo.visibility_helper" | Safe}}</label>
 							{{end}}
 						</div>
 					</div>
 					<div class="inline field">
-						<label>{{.i18n.Tr "repo.migrate_type"}}</label>
+						<label>{{.dlt.Tr "repo.migrate_type"}}</label>
 						<div class="ui checkbox">
 							<input name="mirror" type="checkbox" {{if .mirror}}checked{{end}}>
-							<label>{{.i18n.Tr "repo.migrate_type_helper" | Safe}}</label>
+							<label>{{.dlt.Tr "repo.migrate_type_helper" | Safe}}</label>
 						</div>
 					</div>
 					<div class="inline field {{if .Err_Description}}error{{end}}">
-						<label for="description">{{.i18n.Tr "repo.repo_desc"}}</label>
+						<label for="description">{{.dlt.Tr "repo.repo_desc"}}</label>
 						<textarea id="description" name="description">{{.description}}</textarea>
 					</div>
 
 					<div class="inline field">
 						<label></label>
 						<button class="ui green button">
-							{{.i18n.Tr "repo.migrate_repo"}}
+							{{.dlt.Tr "repo.migrate_repo"}}
 						</button>
-						<a class="ui button" href="{{AppSubUrl}}/">{{.i18n.Tr "cancel"}}</a>
+						<a class="ui button" href="{{AppSubUrl}}/">{{.dlt.Tr "cancel"}}</a>
 					</div>
 				</div>
 			</form>

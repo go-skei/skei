@@ -5,7 +5,7 @@
 		{{template "base/alert" .}}
 		{{if .IsOrganizationOwner}}
 			<div class="text right">
-				<a class="ui green button" href="{{.OrgLink}}/teams/new"><i class="octicon octicon-repo-create"></i> {{.i18n.Tr "org.create_new_team"}}</a>
+				<a class="ui green button" href="{{.OrgLink}}/teams/new"><i class="octicon octicon-repo-create"></i> {{.dlt.Tr "org.create_new_team"}}</a>
 			</div>
 			<div class="ui divider"></div>
 		{{end}}
@@ -17,9 +17,9 @@
 						<a class="text black" href="{{$.OrgLink}}/teams/{{.LowerName}}"><strong>{{.Name}}</strong></a>
 						<div class="ui right">
 							{{if .IsMember $.SignedUser.ID}}
-								<a class="ui red small button" href="{{$.OrgLink}}/teams/{{.LowerName}}/action/leave?uid={{$.SignedUser.ID}}">{{$.i18n.Tr "org.teams.leave"}}</a>
+								<a class="ui red small button" href="{{$.OrgLink}}/teams/{{.LowerName}}/action/leave?uid={{$.SignedUser.ID}}">{{$.dlt.Tr "org.teams.leave"}}</a>
 							{{else if $.IsOrganizationOwner}}
-								<a class="ui blue small button" href="{{$.OrgLink}}/teams/{{.LowerName}}/action/join?uid={{$.SignedUser.ID}}">{{$.i18n.Tr "org.teams.join"}}</a>
+								<a class="ui blue small button" href="{{$.OrgLink}}/teams/{{.LowerName}}/action/join?uid={{$.SignedUser.ID}}">{{$.dlt.Tr "org.teams.join"}}</a>
 							{{end}}
 						</div>
 					</div>
@@ -31,7 +31,7 @@
 						{{end}}
 					</div>
 					<div class="ui bottom attached header">
-						<p class="team-meta">{{.NumMembers}} {{$.i18n.Tr "org.lower_members"}} · {{.NumRepos}} {{$.i18n.Tr "org.lower_repositories"}}</p>
+						<p class="team-meta">{{.NumMembers}} {{$.dlt.Tr "org.lower_members"}} · {{.NumRepos}} {{$.dlt.Tr "org.lower_repositories"}}</p>
 					</div>
 				</div>
 			{{end}}

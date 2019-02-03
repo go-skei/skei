@@ -22,7 +22,7 @@
 								{{if .LatestCommitVerification.Verified}}
 									<i title="{{.LatestCommitVerification.Reason}}" class="lock green icon"></i>
 								{{else}}
-									<i title="{{$.i18n.Tr .LatestCommitVerification.Reason}}" class="unlock icon"></i>
+									<i title="{{$.dlt.Tr .LatestCommitVerification.Reason}}" class="unlock icon"></i>
 								{{end}}
 							</div>
 						{{end}}

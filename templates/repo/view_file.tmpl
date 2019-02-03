@@ -7,11 +7,11 @@
 					{{if .ReadmeInList}}
 						<strong>{{.FileName}}</strong>
 					{{else}}
-						<strong>{{.FileName}}</strong> <span class="text grey normal">{{FileSize .FileSize}}{{if .IsLFSFile}} ({{.i18n.Tr "repo.stored_lfs"}}){{end}}</span>
+						<strong>{{.FileName}}</strong> <span class="text grey normal">{{FileSize .FileSize}}{{if .IsLFSFile}} ({{.dlt.Tr "repo.stored_lfs"}}){{end}}</span>
 					{{end}}
 				{{else}}
 					<i class="file text outline icon ui left"></i>
-					<strong>{{.FileName}}</strong> <span class="text grey normal">{{FileSize .FileSize}}{{if .IsLFSFile}} ({{.i18n.Tr "repo.stored_lfs"}}){{end}}</span>
+					<strong>{{.FileName}}</strong> <span class="text grey normal">{{FileSize .FileSize}}{{if .IsLFSFile}} ({{.dlt.Tr "repo.stored_lfs"}}){{end}}</span>
 				{{end}}
 			</div>
 			<div class="six wide right aligned column">
@@ -19,10 +19,10 @@
 					<div class="ui right file-actions">
 						<div class="ui buttons">
 							{{if not .IsViewCommit}}
-								<a class="ui button" href="{{.RepoLink}}/src/commit/{{.CommitID}}/{{EscapePound .TreePath}}">{{.i18n.Tr "repo.file_permalink"}}</a>
+								<a class="ui button" href="{{.RepoLink}}/src/commit/{{.CommitID}}/{{EscapePound .TreePath}}">{{.dlt.Tr "repo.file_permalink"}}</a>
 							{{end}}
-							<a class="ui button" href="{{.RepoLink}}/commits/{{EscapePound .BranchNameSubURL}}/{{EscapePound .TreePath}}">{{.i18n.Tr "repo.file_history"}}</a>
-							<a class="ui button" href="{{EscapePound $.RawFileLink}}">{{.i18n.Tr "repo.file_raw"}}</a>
+							<a class="ui button" href="{{.RepoLink}}/commits/{{EscapePound .BranchNameSubURL}}/{{EscapePound .TreePath}}">{{.dlt.Tr "repo.file_history"}}</a>
+							<a class="ui button" href="{{EscapePound $.RawFileLink}}">{{.dlt.Tr "repo.file_raw"}}</a>
 						</div>
 						{{if .Repository.CanEnableEditor}}
 							{{if .CanEditFile}}
@@ -53,16 +53,16 @@
 						<img src="{{EscapePound $.RawFileLink}}">
 					{{else if .IsVideoFile}}
 						<video controls src="{{EscapePound $.RawFileLink}}">
-							<strong>{{.i18n.Tr "repo.video_not_supported_in_browser"}}</strong>
+							<strong>{{.dlt.Tr "repo.video_not_supported_in_browser"}}</strong>
 						</video>
 					{{else if .IsAudioFile}}
 						<audio controls src="{{EscapePound $.RawFileLink}}">
-							<strong>{{.i18n.Tr "repo.audio_not_supported_in_browser"}}</strong>
+							<strong>{{.dlt.Tr "repo.audio_not_supported_in_browser"}}</strong>
 						</audio>
 					{{else if .IsPDFFile}}
 						<iframe width="100%" height="600px" src="{{AppSubUrl}}/vendor/plugins/pdfjs/web/viewer.html?file={{EscapePound $.RawFileLink}}"></iframe>
 					{{else}}
-						<a href="{{EscapePound $.RawFileLink}}" rel="nofollow" class="btn btn-gray btn-radius">{{.i18n.Tr "repo.file_view_raw"}}</a>
+						<a href="{{EscapePound $.RawFileLink}}" rel="nofollow" class="btn btn-gray btn-radius">{{.dlt.Tr "repo.file_view_raw"}}</a>
 					{{end}}
 				</div>
 			{{else if .FileSize}}
@@ -70,7 +70,7 @@
 					<tbody>
 						<tr>
 						{{if .IsFileTooLarge}}
-							<td><strong>{{.i18n.Tr "repo.file_too_large"}}</strong></td>
+							<td><strong>{{.dlt.Tr "repo.file_too_large"}}</strong></td>
 						{{else}}
 							<td class="lines-num">{{.LineNums}}</td>
 							<td class="lines-code"><pre><code class="{{.HighlightClass}}"><ol class="linenums">{{.FileContent}}</ol></code></pre></td>
@@ -85,7 +85,7 @@
 
 <script>
 function submitDeleteForm() {
-    var message = prompt("{{.i18n.Tr "repo.delete_confirm_message"}}\n\n{{.i18n.Tr "repo.delete_commit_summary"}}", "Delete '{{.TreeName}}'");
+    var message = prompt("{{.dlt.Tr "repo.delete_confirm_message"}}\n\n{{.dlt.Tr "repo.delete_commit_summary"}}", "Delete '{{.TreeName}}'");
     if (message != null) {
         $("#delete-message").val(message);
         $("#delete-file-form").submit()

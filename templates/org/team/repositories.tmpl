@@ -15,11 +15,11 @@
 							<div class="inline field ui left">
 								<div id="search-repo-box" data-uid="{{.Org.ID}}" class="ui search">
 									<div class="ui input">
-										<input class="prompt" name="repo_name" placeholder="{{.i18n.Tr "org.teams.search_repo_placeholder"}}" autocomplete="off" required>
+										<input class="prompt" name="repo_name" placeholder="{{.dlt.Tr "org.teams.search_repo_placeholder"}}" autocomplete="off" required>
 									</div>
 								</div>
 							</div>
-							<button class="ui green button">{{.i18n.Tr "org.teams.add_team_repository"}}</button>
+							<button class="ui green button">{{.dlt.Tr "org.teams.add_team_repository"}}</button>
 						</form>
 					</div>
 				{{end}}
@@ -27,7 +27,7 @@
 					{{range .Team.Repos}}
 						<div class="item">
 							{{if $canAddRemove}}
-								<a class="ui red small button right" href="{{$.OrgLink}}/teams/{{$.Team.LowerName}}/action/repo/remove?repoid={{.ID}}">{{$.i18n.Tr "org.teams.remove_repo"}}</a>
+								<a class="ui red small button right" href="{{$.OrgLink}}/teams/{{$.Team.LowerName}}/action/repo/remove?repoid={{.ID}}">{{$.dlt.Tr "org.teams.remove_repo"}}</a>
 							{{end}}
 							<a class="member" href="{{AppSubUrl}}/{{$.Org.Name}}/{{.Name}}">
 								<i class="octicon octicon-{{if .IsPrivate}}lock{{else if .IsFork}}repo-forked{{else if .IsMirror}}repo-clone{{else}}repo{{end}}"></i>
@@ -36,7 +36,7 @@
 						</div>
 					{{else}}
 						<div class="item">
-							<span class="text grey italic">{{$.i18n.Tr "org.teams.repos.none"}}</span>
+							<span class="text grey italic">{{$.dlt.Tr "org.teams.repos.none"}}</span>
 						</div>
 					{{end}}
 				</div>

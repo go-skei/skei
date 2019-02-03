@@ -4,11 +4,11 @@
 	<div class="ui container">
 		<h2 class="ui dividing header">
 			{{if .PageIsEditRelease}}
-				{{.i18n.Tr "repo.release.edit_release"}}
-				<div class="sub header">{{.i18n.Tr "repo.release.edit_subheader"}}</div>
+				{{.dlt.Tr "repo.release.edit_release"}}
+				<div class="sub header">{{.dlt.Tr "repo.release.edit_subheader"}}</div>
 			{{else}}
-				{{.i18n.Tr "repo.release.new_release"}}
-				<div class="sub header">{{.i18n.Tr "repo.release.new_subheader"}}</div>
+				{{.dlt.Tr "repo.release.new_release"}}
+				<div class="sub header">{{.dlt.Tr "repo.release.new_subheader"}}</div>
 			{{end}}
 		</h2>
 		{{template "base/alert" .}}
@@ -19,13 +19,13 @@
 					{{if .PageIsEditRelease}}
 						<b>{{.tag_name}}</b><span class="at">@</span><strong>{{.tag_target}}</strong>
 					{{else}}
-						<input id="tag-name" name="tag_name" value="{{.tag_name}}" placeholder="{{.i18n.Tr "repo.release.tag_name"}}" autofocus required>
+						<input id="tag-name" name="tag_name" value="{{.tag_name}}" placeholder="{{.dlt.Tr "repo.release.tag_name"}}" autofocus required>
 						<span class="at">@</span>
 						<div class="ui selection dropdown">
 							<input type="hidden" name="tag_target" value="{{.tag_target}}"/>
 							<i class="octicon octicon-git-branch"></i>
 							<div class="text">
-								{{.i18n.Tr "repo.release.target"}} :
+								{{.dlt.Tr "repo.release.target"}} :
 								<strong id="repo-branch-current">{{.Repository.DefaultBranch}}</strong>
 							</div>
 							<i class="dropdown icon"></i>
@@ -35,22 +35,22 @@
 								{{end}}
 							</div>
 						</div>
-						<span class="help">{{.i18n.Tr "repo.release.tag_helper"}}</span>
+						<span class="help">{{.dlt.Tr "repo.release.tag_helper"}}</span>
 					{{end}}
 				</div>
 			</div>
 			<div class="eleven wide column">
 				<div class="field {{if .Err_Title}}error{{end}}">
-					<label>{{.i18n.Tr "repo.release.title"}}</label>
-					<input name="title" placeholder="{{.i18n.Tr "repo.release.title"}}" value="{{.title}}" autofocus required>
+					<label>{{.dlt.Tr "repo.release.title"}}</label>
+					<input name="title" placeholder="{{.dlt.Tr "repo.release.title"}}" value="{{.title}}" autofocus required>
 				</div>
 				<div class="field">
-					<label>{{.i18n.Tr "repo.release.content"}}</label>
+					<label>{{.dlt.Tr "repo.release.content"}}</label>
 					<textarea name="content">{{.content}}</textarea>
 				</div>
 				{{if .IsAttachmentEnabled}}
 					<div class="files"></div>
-					<div class="ui basic button dropzone" id="dropzone" data-upload-url="{{AppSubUrl}}/attachments" data-accepts="{{.AttachmentAllowedTypes}}" data-max-file="{{.AttachmentMaxFiles}}" data-max-size="{{.AttachmentMaxSize}}" data-default-message="{{.i18n.Tr "dropzone.default_message"}}" data-invalid-input-type="{{.i18n.Tr "dropzone.invalid_input_type"}}" data-file-too-big="{{.i18n.Tr "dropzone.file_too_big"}}" data-remove-file="{{.i18n.Tr "dropzone.remove_file"}}"></div>
+					<div class="ui basic button dropzone" id="dropzone" data-upload-url="{{AppSubUrl}}/attachments" data-accepts="{{.AttachmentAllowedTypes}}" data-max-file="{{.AttachmentMaxFiles}}" data-max-size="{{.AttachmentMaxSize}}" data-default-message="{{.dlt.Tr "dropzone.default_message"}}" data-invalid-input-type="{{.dlt.Tr "dropzone.invalid_input_type"}}" data-file-too-big="{{.dlt.Tr "dropzone.file_too_big"}}" data-remove-file="{{.dlt.Tr "dropzone.remove_file"}}"></div>
 				{{end}}
 			</div>
 			<div class="ui container">
@@ -59,33 +59,33 @@
 					<div class="prerelease field">
 						<div class="ui checkbox">
 							<input type="checkbox" name="prerelease" {{if .prerelease}}checked{{end}}>
-							<label><strong>{{.i18n.Tr "repo.release.prerelease_desc"}}</strong></label>
+							<label><strong>{{.dlt.Tr "repo.release.prerelease_desc"}}</strong></label>
 						</div>
 					</div>
-					<span class="help">{{.i18n.Tr "repo.release.prerelease_helper"}}</span>
+					<span class="help">{{.dlt.Tr "repo.release.prerelease_helper"}}</span>
 					<div class="field">
 						{{if .PageIsEditRelease}}
 							<a class="ui blue basic button" href="{{.RepoLink}}/releases">
-								{{.i18n.Tr "repo.release.cancel"}}
+								{{.dlt.Tr "repo.release.cancel"}}
 							</a>
 							{{if .IsDraft}}
-								<input class="ui grey button" type="submit" name="draft" value="{{.i18n.Tr "repo.release.save_draft"}}"/>
+								<input class="ui grey button" type="submit" name="draft" value="{{.dlt.Tr "repo.release.save_draft"}}"/>
 								<button class="ui green button">
-									{{.i18n.Tr "repo.release.publish"}}
+									{{.dlt.Tr "repo.release.publish"}}
 								</button>
 							{{else}}
 								<button class="ui green button">
-									{{.i18n.Tr "repo.release.edit_release"}}
+									{{.dlt.Tr "repo.release.edit_release"}}
 								</button>
 							{{end}}
 							<a class="ui red button delete-button" data-url="{{$.RepoLink}}/releases/delete" data-id="{{.ID}}">
-								{{$.i18n.Tr "repo.release.delete_release"}}
+								{{$.dlt.Tr "repo.release.delete_release"}}
 							</a>
 						{{else}}
 							<button class="ui green button">
-								{{.i18n.Tr "repo.release.publish"}}
+								{{.dlt.Tr "repo.release.publish"}}
 							</button>
-							<input class="ui grey button" type="submit" name="draft" value="{{.i18n.Tr "repo.release.save_draft"}}"/>
+							<input class="ui grey button" type="submit" name="draft" value="{{.dlt.Tr "repo.release.save_draft"}}"/>
 						{{end}}
 					</div>
 				</div>
@@ -98,10 +98,10 @@
 	<div class="ui small basic delete modal">
 		<div class="ui icon header">
 			<i class="trash icon"></i>
-			{{.i18n.Tr "repo.release.deletion"}}
+			{{.dlt.Tr "repo.release.deletion"}}
 		</div>
 		<div class="content">
-			<p>{{.i18n.Tr "repo.release.deletion_desc"}}</p>
+			<p>{{.dlt.Tr "repo.release.deletion_desc"}}</p>
 		</div>
 		{{template "base/delete_modal_actions" .}}
 	</div>

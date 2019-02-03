@@ -10,7 +10,7 @@
 						<div id="user-heatmap" style="padding-right: 40px">
 							<activity-heatmap :locale="locale" :suburl="suburl" :user="heatmapUser">
 								<div slot="loading">
-									<div class="ui active centered inline indeterminate text loader" id="loading-heatmap">{{.i18n.Tr "user.heatmap.loading"}}</div>
+									<div class="ui active centered inline indeterminate text loader" id="loading-heatmap">{{.dlt.Tr "user.heatmap.loading"}}</div>
 								</div>
 							</activity-heatmap>
 						</div>
@@ -40,45 +40,45 @@
 				>
 					<div>
 						<div v-if="!isOrganization" class="ui two item tabable menu">
-							<a :class="{item: true, active: tab === 'repos'}" @click="changeTab('repos')">{{.i18n.Tr "repository"}}</a>
-							<a :class="{item: true, active: tab === 'organizations'}" @click="changeTab('organizations')">{{.i18n.Tr "organization"}}</a>
+							<a :class="{item: true, active: tab === 'repos'}" @click="changeTab('repos')">{{.dlt.Tr "repository"}}</a>
+							<a :class="{item: true, active: tab === 'organizations'}" @click="changeTab('organizations')">{{.dlt.Tr "organization"}}</a>
 						</div>
 						<div v-show="tab === 'repos'" class="ui tab active list dashboard-repos">
 							<h4 class="ui top attached header">
-								{{.i18n.Tr "home.my_repos"}} <span class="ui grey label">${reposTotalCount}</span>
+								{{.dlt.Tr "home.my_repos"}} <span class="ui grey label">${reposTotalCount}</span>
 								<div class="ui right">
-									<a class="poping up" :href="suburl + '/repo/create'" data-content="{{.i18n.Tr "new_repo"}}" data-variation="tiny inverted" data-position="left center">
+									<a class="poping up" :href="suburl + '/repo/create'" data-content="{{.dlt.Tr "new_repo"}}" data-variation="tiny inverted" data-position="left center">
 										<i class="plus icon"></i>
-										<span class="sr-only">{{.i18n.Tr "new_repo"}}</span>
+										<span class="sr-only">{{.dlt.Tr "new_repo"}}</span>
 									</a>
 								</div>
 							</h4>
 							<div class="ui attached secondary segment repos-search">
 								<div class="ui fluid icon input" :class="{loading: isLoading}">
-									<input @input="searchRepos(reposFilter)" v-model="searchQuery" ref="search" placeholder="{{.i18n.Tr "home.search_repos"}}">
+									<input @input="searchRepos(reposFilter)" v-model="searchQuery" ref="search" placeholder="{{.dlt.Tr "home.search_repos"}}">
 									<i class="search icon"></i>
 								</div>
 
 								{{if eq .SignedUser.DetailLevel "full"}}
 									<div class="ui secondary tiny pointing borderless menu center aligned grid repos-filter">
 										<a class="item" :class="{active: reposFilter === 'all'}" @click="changeReposFilter('all')">
-											{{.i18n.Tr "all"}}
+											{{.dlt.Tr "all"}}
 											<div v-show="reposFilter === 'all'" class="ui circular mini grey label">${repoTypeCount}</div>
 										</a>
 										<a class="item" :class="{active: reposFilter === 'sources'}" @click="changeReposFilter('sources')">
-											{{.i18n.Tr "sources"}}
+											{{.dlt.Tr "sources"}}
 											<div v-show="reposFilter === 'sources'" class="ui circular mini grey label">${repoTypeCount}</div>
 										</a>
 										<a class="item" :class="{active: reposFilter === 'forks'}" @click="changeReposFilter('forks')">
-											{{.i18n.Tr "forks"}}
+											{{.dlt.Tr "forks"}}
 											<div v-show="reposFilter === 'forks'" class="ui circular mini grey label">${repoTypeCount}</div>
 										</a>
 										<a class="item" :class="{active: reposFilter === 'mirrors'}" @click="changeReposFilter('mirrors')">
-											{{.i18n.Tr "mirrors"}}
+											{{.dlt.Tr "mirrors"}}
 											<div v-show="reposFilter === 'mirrors'" class="ui circular mini grey label">${repoTypeCount}</div>
 										</a>
 										<a class="item" :class="{active: reposFilter === 'collaborative'}" @click="changeReposFilter('collaborative')">
-											{{.i18n.Tr "collaborative"}}
+											{{.dlt.Tr "collaborative"}}
 											<div v-show="reposFilter === 'collaborative'" class="ui circular mini grey label">${repoTypeCount}</div>
 										</a>
 									</div>
@@ -97,18 +97,18 @@
 										</a>
 									</li>
 									<li v-if="showMoreReposLink">
-										<a :href="moreReposLink">{{.i18n.Tr "home.show_more_repos"}}</a>
+										<a :href="moreReposLink">{{.dlt.Tr "home.show_more_repos"}}</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 						<div v-if="!isOrganization" v-show="tab === 'organizations'" class="ui tab active list">
 							<h4 class="ui top attached header">
-								{{.i18n.Tr "home.my_orgs"}} <span class="ui grey label">${organizationsTotalCount}</span>
+								{{.dlt.Tr "home.my_orgs"}} <span class="ui grey label">${organizationsTotalCount}</span>
 								<div v-if="canCreateOrganization" class="ui right">
-									<a class="poping up" :href="suburl + '/org/create'" data-content="{{.i18n.Tr "new_org"}}" data-variation="tiny inverted" data-position="left center">
+									<a class="poping up" :href="suburl + '/org/create'" data-content="{{.dlt.Tr "new_org"}}" data-variation="tiny inverted" data-position="left center">
 										<i class="plus icon"></i>
-										<span class="sr-only">{{.i18n.Tr "new_org"}}</span>
+										<span class="sr-only">{{.dlt.Tr "new_org"}}</span>
 									</a>
 								</div>
 							</h4>

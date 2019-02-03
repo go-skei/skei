@@ -4,11 +4,11 @@
 	<div class="ui container">
 		{{template "base/alert" .}}
 		<h2 class="ui header">
-			{{.i18n.Tr "repo.release.releases"}}
+			{{.dlt.Tr "repo.release.releases"}}
 			{{if .CanCreateRelease}}
 				<div class="ui right">
 					<a class="ui small green button" href="{{$.RepoLink}}/releases/new">
-						{{.i18n.Tr "repo.release.new_release"}}
+						{{.dlt.Tr "repo.release.new_release"}}
 					</a>
 				</div>
 			{{end}}
@@ -21,11 +21,11 @@
 							{{if .CreatedUnix}}<span class="time">{{TimeSinceUnix .CreatedUnix $.Lang}}</span>{{end}}
 						{{else}}
 							{{if .IsDraft}}
-								<span class="ui yellow label">{{$.i18n.Tr "repo.release.draft"}}</span>
+								<span class="ui yellow label">{{$.dlt.Tr "repo.release.draft"}}</span>
 							{{else if .IsPrerelease}}
-								<span class="ui orange label">{{$.i18n.Tr "repo.release.prerelease"}}</span>
+								<span class="ui orange label">{{$.dlt.Tr "repo.release.prerelease"}}</span>
 							{{else}}
-								<span class="ui green label">{{$.i18n.Tr "repo.release.stable"}}</span>
+								<span class="ui green label">{{$.dlt.Tr "repo.release.stable"}}</span>
 							{{end}}
 							<span class="tag text blue">
 								<a href="{{$.RepoLink}}/src/tag/{{.TagName | EscapePound}}" rel="nofollow"><i class="tag icon"></i> {{.TagName}}</a>
@@ -50,7 +50,7 @@
 						{{else}}
 							<h3>
 								<a href="{{$.RepoLink}}/src/tag/{{.TagName | EscapePound}}">{{.Title}}</a>
-								{{if $.CanCreateRelease}}<small>(<a href="{{$.RepoLink}}/releases/edit/{{.TagName | EscapePound}}" rel="nofollow">{{$.i18n.Tr "repo.release.edit"}}</a>)</small>{{end}}
+								{{if $.CanCreateRelease}}<small>(<a href="{{$.RepoLink}}/releases/edit/{{.TagName | EscapePound}}" rel="nofollow">{{$.dlt.Tr "repo.release.edit"}}</a>)</small>{{end}}
 							</h3>
 							<p class="text grey">
 								<span class="author">
@@ -58,20 +58,20 @@
 									<a href="{{AppSubUrl}}/{{.Publisher.Name}}">{{.Publisher.Name}}</a>
 								</span>
 								{{if .CreatedUnix}}<span class="time">{{TimeSinceUnix .CreatedUnix $.Lang}}</span>{{end}}
-								<span class="ahead">{{$.i18n.Tr "repo.release.ahead" .NumCommitsBehind .Target | Str2html}}</span>
+								<span class="ahead">{{$.dlt.Tr "repo.release.ahead" .NumCommitsBehind .Target | Str2html}}</span>
 							</p>
 							<div class="markdown desc">
 								{{Str2html .Note}}
 							</div>
 							<div class="download">
-								<h2>{{$.i18n.Tr "repo.release.downloads"}}</h2>
+								<h2>{{$.dlt.Tr "repo.release.downloads"}}</h2>
 								<ul class="list">
 									{{if $.Permission.CanRead $.UnitTypeCode}}
 									<li>
-										<a href="{{$.RepoLink}}/archive/{{.TagName | EscapePound}}.zip" rel="nofollow"><strong><i class="octicon octicon-file-zip"></i> {{$.i18n.Tr "repo.release.source_code"}} (ZIP)</strong></a>
+										<a href="{{$.RepoLink}}/archive/{{.TagName | EscapePound}}.zip" rel="nofollow"><strong><i class="octicon octicon-file-zip"></i> {{$.dlt.Tr "repo.release.source_code"}} (ZIP)</strong></a>
 									</li>
 									<li>
-										<a href="{{$.RepoLink}}/archive/{{.TagName | EscapePound}}.tar.gz"><strong><i class="octicon octicon-file-zip"></i> {{$.i18n.Tr "repo.release.source_code"}} (TAR.GZ)</strong></a>
+										<a href="{{$.RepoLink}}/archive/{{.TagName | EscapePound}}.tar.gz"><strong><i class="octicon octicon-file-zip"></i> {{$.dlt.Tr "repo.release.source_code"}} (TAR.GZ)</strong></a>
 									</li>
 									{{end}}
 									{{if .Attachments}}

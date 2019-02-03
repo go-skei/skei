@@ -7,7 +7,7 @@
 		{{else}}
 			<div class="ui top attached info clearing segment {{if .Commit.Signature}} isSigned {{if .Verification.Verified }} isVerified {{end}}{{end}}">
 				<a class="ui floated right blue tiny button" href="{{EscapePound .SourcePath}}">
-					{{.i18n.Tr "repo.diff.browse_source"}}
+					{{.dlt.Tr "repo.diff.browse_source"}}
 				</a>
 				<h3 class="has-emoji">{{RenderCommitMessage .Commit.Message $.RepoLink $.Repository.ComposeMetas}}{{template "repo/commit_status" .CommitStatus}}</h3>
 				{{if IsMultilineCommitMessage .Commit.Message}}
@@ -34,7 +34,7 @@
 						<div class="ui horizontal list">
 							{{if .Parents}}
 								<div class="item">
-									{{.i18n.Tr "repo.diff.parent"}}
+									{{.dlt.Tr "repo.diff.parent"}}
 								</div>
 								<div class="item">
 									{{range .Parents}}
@@ -43,7 +43,7 @@
 								</div>
 							{{end}}
 							<div class="mobile-only"></div>
-							<div class="item">{{.i18n.Tr "repo.diff.commit"}}</div>
+							<div class="item">{{.dlt.Tr "repo.diff.commit"}}</div>
 							<div class="item"><span class="ui blue sha label">{{ShortSha .CommitID}}</span></div>
 						</div>
 					</div><!-- end column -->
@@ -53,14 +53,14 @@
 				{{if .Verification.Verified }}
 					<div class="ui bottom attached positive message" style="text-align: initial;color: black;">
 					  <i class="green lock icon"></i>
-						<span style="color: #2C662D;">{{.i18n.Tr "repo.commits.signed_by"}}:</span>
+						<span style="color: #2C662D;">{{.dlt.Tr "repo.commits.signed_by"}}:</span>
 						<a href="{{.Verification.SigningUser.HomeLink}}"><strong>{{.Commit.Committer.Name}}</strong></a> <{{.Commit.Committer.Email}}>
-						<span class="pull-right"><span style="color: #2C662D;">{{.i18n.Tr "repo.commits.gpg_key_id"}}:</span> {{.Verification.SigningKey.KeyID}}</span>
+						<span class="pull-right"><span style="color: #2C662D;">{{.dlt.Tr "repo.commits.gpg_key_id"}}:</span> {{.Verification.SigningKey.KeyID}}</span>
 					</div>
 				{{else}}
 					<div class="ui bottom attached message" style="text-align: initial;color: black;">
 					  <i class="grey unlock icon"></i>
-					  {{.i18n.Tr .Verification.Reason}}
+					  {{.dlt.Tr .Verification.Reason}}
 					</div>
 				{{end}}
 			{{end}}
