@@ -6,13 +6,15 @@
 		<div class="ui mobile reversed stackable grid">
 			<div class="ten wide column">
 				{{if .EnableHeatmap}}
-					<div id="user-heatmap" style="padding-right: 40px">
-						<activity-heatmap :locale="locale" :suburl="suburl" :user="heatmapUser">
-							<div slot="loading">
-								<div class="ui active centered inline indeterminate text loader" id="loading-heatmap">{{.i18n.Tr "user.heatmap.loading"}}</div>
-							</div>
-						</activity-heatmap>
-					</div>
+					{{if eq .SignedUser.DetailLevel "full"}}
+						<div id="user-heatmap" style="padding-right: 40px">
+							<activity-heatmap :locale="locale" :suburl="suburl" :user="heatmapUser">
+								<div slot="loading">
+									<div class="ui active centered inline indeterminate text loader" id="loading-heatmap">{{.i18n.Tr "user.heatmap.loading"}}</div>
+								</div>
+							</activity-heatmap>
+						</div>
+					{{end}}
 					<div class="ui divider"></div>
 				{{end}}
 				{{template "user/dashboard/feeds" .}}
@@ -56,29 +58,32 @@
 									<input @input="searchRepos(reposFilter)" v-model="searchQuery" ref="search" placeholder="{{.i18n.Tr "home.search_repos"}}">
 									<i class="search icon"></i>
 								</div>
-								<div class="ui secondary tiny pointing borderless menu center aligned grid repos-filter">
-									<a class="item" :class="{active: reposFilter === 'all'}" @click="changeReposFilter('all')">
-										{{.i18n.Tr "all"}}
-										<div v-show="reposFilter === 'all'" class="ui circular mini grey label">${repoTypeCount}</div>
-									</a>
-									<a class="item" :class="{active: reposFilter === 'sources'}" @click="changeReposFilter('sources')">
-										{{.i18n.Tr "sources"}}
-										<div v-show="reposFilter === 'sources'" class="ui circular mini grey label">${repoTypeCount}</div>
-									</a>
-									<a class="item" :class="{active: reposFilter === 'forks'}" @click="changeReposFilter('forks')">
-										{{.i18n.Tr "forks"}}
-										<div v-show="reposFilter === 'forks'" class="ui circular mini grey label">${repoTypeCount}</div>
-									</a>
-									<a class="item" :class="{active: reposFilter === 'mirrors'}" @click="changeReposFilter('mirrors')">
-										{{.i18n.Tr "mirrors"}}
-										<div v-show="reposFilter === 'mirrors'" class="ui circular mini grey label">${repoTypeCount}</div>
-									</a>
-									<a class="item" :class="{active: reposFilter === 'collaborative'}" @click="changeReposFilter('collaborative')">
-										{{.i18n.Tr "collaborative"}}
-										<div v-show="reposFilter === 'collaborative'" class="ui circular mini grey label">${repoTypeCount}</div>
-									</a>
+
+								{{if eq .SignedUser.DetailLevel "full"}}
+									<div class="ui secondary tiny pointing borderless menu center aligned grid repos-filter">
+										<a class="item" :class="{active: reposFilter === 'all'}" @click="changeReposFilter('all')">
+											{{.i18n.Tr "all"}}
+											<div v-show="reposFilter === 'all'" class="ui circular mini grey label">${repoTypeCount}</div>
+										</a>
+										<a class="item" :class="{active: reposFilter === 'sources'}" @click="changeReposFilter('sources')">
+											{{.i18n.Tr "sources"}}
+											<div v-show="reposFilter === 'sources'" class="ui circular mini grey label">${repoTypeCount}</div>
+										</a>
+										<a class="item" :class="{active: reposFilter === 'forks'}" @click="changeReposFilter('forks')">
+											{{.i18n.Tr "forks"}}
+											<div v-show="reposFilter === 'forks'" class="ui circular mini grey label">${repoTypeCount}</div>
+										</a>
+										<a class="item" :class="{active: reposFilter === 'mirrors'}" @click="changeReposFilter('mirrors')">
+											{{.i18n.Tr "mirrors"}}
+											<div v-show="reposFilter === 'mirrors'" class="ui circular mini grey label">${repoTypeCount}</div>
+										</a>
+										<a class="item" :class="{active: reposFilter === 'collaborative'}" @click="changeReposFilter('collaborative')">
+											{{.i18n.Tr "collaborative"}}
+											<div v-show="reposFilter === 'collaborative'" class="ui circular mini grey label">${repoTypeCount}</div>
+										</a>
+									</div>
 								</div>
-							</div>
+							{{end}}
 							<div class="ui attached table segment">
 								<ul class="repo-owner-name-list">
 									<li v-for="repo in repos" :class="{'private': repo.private}" v-show="showRepo(repo, reposFilter)">
