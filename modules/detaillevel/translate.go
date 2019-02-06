@@ -36,28 +36,25 @@ type Translator struct {
 
 // Return translation based on detail level and locale.
 func (t Translator) Tr(format string, args ...interface{}) string {
-	// Try getting translation with '__(detail_level)' appended to the format.
-	format_with_detail_level := format + "__" + t.detail_level
-	text_with_detail_level := t.locale.Tr(format_with_detail_level, args...)
-
-	// If the format with __(detail_level) appended is not found, it will return
-	// the format string without the section. Calculate the format string without
-	// the section here so we can compare them.
-	var format_with_detail_level_without_section string
-
-	idx := strings.IndexByte(format_with_detail_level, '.')
+	var section_with_dot, key string
+	idx := strings.IndexByte(format, '.')
 	if idx > 0 {
-		format_with_detail_level_without_section = format_with_detail_level[idx+1:]
+		section_with_dot = format[:idx+1]
+		key = format[idx+1:]
 	} else {
-		format_with_detail_level_without_section = format_with_detail_level
+		section_with_dot = ""
+		key = format
 	}
 
-	// If the format with the detail level is not found, it will return the format
-	// string (without section) unchanged. If that is the case, try again with no
-	// detail level appended.
-	if text_with_detail_level != format_with_detail_level_without_section {
-		return text_with_detail_level
+	// Check if translation with '__(detail_level)' appended to the key exists.
+	// Have to call Tr without args, because then it will return the key unchanged
+	// if the translation doesn't exist.
+	key_with_dl := key + "__" + t.detail_level
+	translation_with_dl_exists := (key_with_dl != t.locale.Tr(section_with_dot+key_with_dl))
+
+	if translation_with_dl_exists {
+		return t.locale.Tr(section_with_dot+key_with_dl, args...)
 	} else {
-		return t.locale.Tr(format, args...)
+		return t.locale.Tr(section_with_dot+key, args...)
 	}
 }
