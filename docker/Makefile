@@ -1,7 +1,7 @@
 #Makefile related to docker
 
-DOCKER_IMAGE ?= gitea/gitea
-DOCKER_TAG ?= latest
+DOCKER_IMAGE ?= skei/skei
+DOCKER_TAG ?= dev
 DOCKER_REF := $(DOCKER_IMAGE):$(DOCKER_TAG)
 
 
