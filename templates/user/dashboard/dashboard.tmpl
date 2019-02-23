@@ -82,8 +82,8 @@
 											<div v-show="reposFilter === 'collaborative'" class="ui circular mini grey label">${repoTypeCount}</div>
 										</a>
 									</div>
-								</div>
-							{{end}}
+								{{end}}
+							</div>
 							<div class="ui attached table segment">
 								<ul class="repo-owner-name-list">
 									<li v-for="repo in repos" :class="{'private': repo.private}" v-show="showRepo(repo, reposFilter)">
