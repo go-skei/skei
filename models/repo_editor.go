@@ -20,9 +20,9 @@ import (
 
 	"code.gitea.io/git"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/process"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/process"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // ___________    .___.__  __    ___________.__.__

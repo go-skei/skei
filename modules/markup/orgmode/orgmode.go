@@ -5,8 +5,8 @@
 package markup
 
 import (
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/markup/markdown"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/markup/markdown"
 
 	"github.com/chaseadamsio/goorgeous"
 	"github.com/russross/blackfriday"

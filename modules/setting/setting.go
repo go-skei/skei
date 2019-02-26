@@ -22,10 +22,10 @@ import (
 	"time"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/generate"
-	"code.gitea.io/gitea/modules/log"
-	_ "code.gitea.io/gitea/modules/minwinsvc" // import minwinsvc for windows services
-	"code.gitea.io/gitea/modules/user"
+	"code.skei.dev/skei/modules/generate"
+	"code.skei.dev/skei/modules/log"
+	_ "code.skei.dev/skei/modules/minwinsvc" // import minwinsvc for windows services
+	"code.skei.dev/skei/modules/user"
 
 	"github.com/Unknwon/com"
 	_ "github.com/go-macaron/cache/memcache" // memcache plugin for cache

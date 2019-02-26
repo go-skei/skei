@@ -9,8 +9,8 @@ import (
 	"path"
 	"strings"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // OptionalBool a boolean that can be "null"

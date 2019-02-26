@@ -8,10 +8,10 @@ package org
 import (
 	api "code.gitea.io/sdk/gitea"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/routers/api/v1/convert"
-	"code.gitea.io/gitea/routers/api/v1/user"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/routers/api/v1/convert"
+	"code.skei.dev/skei/routers/api/v1/user"
 )
 
 // ListTeams list all the teams of an organization

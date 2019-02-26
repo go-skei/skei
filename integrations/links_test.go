@@ -10,8 +10,8 @@ import (
 	"path"
 	"testing"
 
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/test"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/test"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/stretchr/testify/assert"

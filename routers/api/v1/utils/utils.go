@@ -4,7 +4,7 @@
 
 package utils
 
-import "code.gitea.io/gitea/modules/context"
+import "code.skei.dev/skei/modules/context"
 
 // UserID user ID of authenticated user, or 0 if not authenticated
 func UserID(ctx *context.APIContext) int64 {

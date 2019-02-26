@@ -5,7 +5,7 @@
 package repo
 
 import (
-	"code.gitea.io/gitea/modules/context"
+	"code.skei.dev/skei/modules/context"
 
 	"code.gitea.io/git"
 	api "code.gitea.io/sdk/gitea"

@@ -25,14 +25,14 @@ become problematic. To "trick" the Go tool into thinking this is a clone from th
 official repository, download the source code using "go get" and follow these instructions.
 
 ```
-go get -d code.gitea.io/gitea
+go get -d code.skei.dev/skei
 ```
 
 Fork the [Gitea repository](https://github.com/go-gitea/gitea) on GitHub, it should
 then be possible to switch the source directory on the command line.
 
 ```
-cd $GOPATH/src/code.gitea.io/gitea
+cd $GOPATH/src/code.skei.dev/skei
 ```
 
 To be able to create pull requests, the forked repository should be added as a remote

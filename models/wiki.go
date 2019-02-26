@@ -17,8 +17,8 @@ import (
 
 	"code.gitea.io/git"
 
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/sync"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/sync"
 )
 
 var (

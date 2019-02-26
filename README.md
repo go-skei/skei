@@ -11,5 +11,5 @@ while remaining accessible for users unfamiliar with git.
 ## License
 
 This project is licensed under the GNU General Public License version 3.
-See the [LICENSE](https://github.com/go-skei/skei/blob/master/LICENSE) file
+See the [LICENSE](https://code.skei.dev/skei/blob/master/LICENSE) file
 for the full license text.

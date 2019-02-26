@@ -7,7 +7,7 @@ package migrations
 import (
 	"time"
 
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 
 	"github.com/go-xorm/core"
 	"github.com/go-xorm/xorm"

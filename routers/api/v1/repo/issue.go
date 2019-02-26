@@ -11,12 +11,12 @@ import (
 	"strings"
 	"time"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/indexer"
-	"code.gitea.io/gitea/modules/notification"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/indexer"
+	"code.skei.dev/skei/modules/notification"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
 
 	api "code.gitea.io/sdk/gitea"
 )

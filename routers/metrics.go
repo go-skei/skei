@@ -7,8 +7,8 @@ package routers
 import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // Metrics validate auth token and render prometheus metrics

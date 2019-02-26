@@ -7,10 +7,10 @@ package models
 import (
 	"fmt"
 
-	"code.gitea.io/gitea/modules/indexer"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/indexer"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
 )
 
 // issueIndexerUpdateQueue queue of issue ids to be updated

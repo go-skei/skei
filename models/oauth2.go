@@ -7,7 +7,7 @@ package models
 import (
 	"sort"
 
-	"code.gitea.io/gitea/modules/auth/oauth2"
+	"code.skei.dev/skei/modules/auth/oauth2"
 )
 
 // OAuth2Provider describes the display values of a single OAuth2 provider

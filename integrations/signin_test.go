@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 
 	"github.com/Unknwon/i18n"
 	"github.com/stretchr/testify/assert"

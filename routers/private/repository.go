@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 
 	macaron "gopkg.in/macaron.v1"
 )

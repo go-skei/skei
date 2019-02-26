@@ -137,7 +137,7 @@ import (
   "fmt"
 
   // local packages
-  "code.gitea.io/gitea/models"
+  "code.skei.dev/skei/models"
   "code.gitea.io/sdk/gitea"
 
   // external packages

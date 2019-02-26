@@ -60,17 +60,17 @@ package v1
 import (
 	"strings"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/routers/api/v1/admin"
-	"code.gitea.io/gitea/routers/api/v1/misc"
-	"code.gitea.io/gitea/routers/api/v1/org"
-	"code.gitea.io/gitea/routers/api/v1/repo"
-	_ "code.gitea.io/gitea/routers/api/v1/swagger" // for swagger generation
-	"code.gitea.io/gitea/routers/api/v1/user"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/routers/api/v1/admin"
+	"code.skei.dev/skei/routers/api/v1/misc"
+	"code.skei.dev/skei/routers/api/v1/org"
+	"code.skei.dev/skei/routers/api/v1/repo"
+	_ "code.skei.dev/skei/routers/api/v1/swagger" // for swagger generation
+	"code.skei.dev/skei/routers/api/v1/user"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/go-macaron/binding"

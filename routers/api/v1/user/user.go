@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"strings"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/markup"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/markup"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/Unknwon/com"

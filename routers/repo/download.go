@@ -13,8 +13,8 @@ import (
 
 	"code.gitea.io/git"
 
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/context"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/context"
 )
 
 // ServeData download file from io.Reader

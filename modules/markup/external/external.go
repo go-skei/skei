@@ -13,9 +13,9 @@ import (
 	"runtime"
 	"strings"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // RegisterParsers registers all supported third part parsers according settings

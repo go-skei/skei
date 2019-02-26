@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/cache"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/cache"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/util"
 )
 
 // env keys for git hooks need

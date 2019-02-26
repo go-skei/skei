@@ -20,11 +20,11 @@ import (
 	"strings"
 	"time"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/setting"
 
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/transform"

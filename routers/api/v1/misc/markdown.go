@@ -7,10 +7,10 @@ package misc
 import (
 	api "code.gitea.io/sdk/gitea"
 
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/markup/markdown"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/markup/markdown"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
 )
 
 // Markdown render markdown document to HTML

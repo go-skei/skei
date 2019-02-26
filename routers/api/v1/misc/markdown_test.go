@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/go-macaron/inject"

@@ -5,7 +5,7 @@
 package metrics
 
 import (
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 
 	"github.com/prometheus/client_golang/prometheus"
 )

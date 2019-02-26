@@ -47,9 +47,9 @@ TEST_PGSQL_HOST=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAdd
 
 下面的示例展示了怎样基于 sqlite 数据库进行 GPG 测试：
 ```
-go test -c code.gitea.io/gitea/integrations \
+go test -c code.skei.dev/skei/integrations \
   -o integrations.sqlite.test -tags 'sqlite' &&
-  GITEA_ROOT="$GOPATH/src/code.gitea.io/gitea" \
+  GITEA_ROOT="$GOPATH/src/code.skei.dev/skei" \
   GITEA_CONF=integrations/sqlite.ini ./integrations.sqlite.test \
   -test.v -test.run GPG
 ```

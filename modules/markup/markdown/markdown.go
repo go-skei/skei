@@ -9,9 +9,9 @@ import (
 	"bytes"
 	"strings"
 
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
 
 	"github.com/russross/blackfriday"
 )

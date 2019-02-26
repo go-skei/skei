@@ -13,7 +13,7 @@ import (
 
 	"gopkg.in/ldap.v2"
 
-	"code.gitea.io/gitea/modules/log"
+	"code.skei.dev/skei/modules/log"
 )
 
 // SecurityProtocol protocol type

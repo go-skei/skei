@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/util"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/stretchr/testify/assert"

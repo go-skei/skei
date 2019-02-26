@@ -10,7 +10,7 @@ import (
 	"html"
 	"io"
 
-	"code.gitea.io/gitea/modules/markup"
+	"code.skei.dev/skei/modules/markup"
 )
 
 func init() {

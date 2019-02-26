@@ -35,12 +35,12 @@ import (
 	"code.gitea.io/git"
 	api "code.gitea.io/sdk/gitea"
 
-	"code.gitea.io/gitea/modules/avatar"
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/generate"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/avatar"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/generate"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
 )
 
 // UserType defines the user type

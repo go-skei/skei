@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"sync"
 
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/microcosm-cc/bluemonday"
 )

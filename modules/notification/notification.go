@@ -6,11 +6,11 @@ package notification
 
 import (
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/notification/base"
-	"code.gitea.io/gitea/modules/notification/indexer"
-	"code.gitea.io/gitea/modules/notification/mail"
-	"code.gitea.io/gitea/modules/notification/ui"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/notification/base"
+	"code.skei.dev/skei/modules/notification/indexer"
+	"code.skei.dev/skei/modules/notification/mail"
+	"code.skei.dev/skei/modules/notification/ui"
 )
 
 var (

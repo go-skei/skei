@@ -5,7 +5,7 @@
 package swagger
 
 import (
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 	api "code.gitea.io/sdk/gitea"
 )
 

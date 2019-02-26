@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	. "code.gitea.io/gitea/modules/markup/markdown"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
+	. "code.skei.dev/skei/modules/markup/markdown"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
 
 	"github.com/stretchr/testify/assert"
 )

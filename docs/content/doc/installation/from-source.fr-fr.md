@@ -24,8 +24,8 @@ Nous ne couvrirons pas les bases de la configuration de Golang dans ce guide. Si
 Tout d'abord, vous devez récupérer le code source, la manière la plus simple est d'utiliser directement Go. Il suffit d'appeler les commandes suivantes pour récupérer le code source et passer au répertoire de travail.
 
 ```
-go get -d -u code.gitea.io/gitea
-cd $GOPATH/src/code.gitea.io/gitea
+go get -d -u code.skei.dev/skei
+cd $GOPATH/src/code.skei.dev/skei
 ```
 
 Maintenant, il est temps de décider quelle version de Gitea vous souhaitez compiler et installer. Actuellement, ils existent plusieurs options possibles. Si vous voulez compiler notre branche `master`, vous pouvez directement passer à la [section compilation](#compilation), cette branche représente la dernière version en cours de développement et n'a pas vocation à être utiliser en production.

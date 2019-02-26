@@ -3,7 +3,7 @@ package models
 import (
 	"errors"
 
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/util"
 )
 
 // LFSMetaObject stores metadata for LFS tracked files.

@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"testing"
 
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 )
 
 func TestAPIReposGitRefs(t *testing.T) {

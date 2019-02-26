@@ -7,7 +7,7 @@ package models
 import (
 	"encoding/json"
 
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/util"
 
 	"github.com/Unknwon/com"
 	"github.com/go-xorm/core"

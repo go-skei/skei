@@ -9,7 +9,7 @@ package detaillevel
 import (
 	"strings"
 
-	"code.gitea.io/gitea/modules/context"
+	"code.skei.dev/skei/modules/context"
 
 	"github.com/go-macaron/i18n"
 	"gopkg.in/macaron.v1"

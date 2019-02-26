@@ -18,11 +18,11 @@ import (
 	"github.com/go-xorm/core"
 	"github.com/go-xorm/xorm"
 
-	"code.gitea.io/gitea/modules/auth/ldap"
-	"code.gitea.io/gitea/modules/auth/oauth2"
-	"code.gitea.io/gitea/modules/auth/pam"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/auth/ldap"
+	"code.skei.dev/skei/modules/auth/oauth2"
+	"code.skei.dev/skei/modules/auth/pam"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/util"
 )
 
 // LoginType represents an login type.

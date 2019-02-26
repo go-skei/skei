@@ -11,12 +11,12 @@ import (
 	"time"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/cache"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/process"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/sync"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/cache"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/process"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/sync"
+	"code.skei.dev/skei/modules/util"
 
 	"github.com/Unknwon/com"
 	"github.com/go-xorm/xorm"

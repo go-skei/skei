@@ -4,7 +4,7 @@
 
 package models
 
-import "code.gitea.io/gitea/modules/setting"
+import "code.skei.dev/skei/modules/setting"
 
 // ___________.__             ___________                     __
 // \__    ___/|__| _____   ___\__    ___/___________    ____ |  | __ ___________

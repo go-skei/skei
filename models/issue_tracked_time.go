@@ -7,7 +7,7 @@ package models
 import (
 	"time"
 
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/go-xorm/builder"

@@ -10,8 +10,8 @@ import (
 	"testing"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
 
 	"net/http/httptest"
 
