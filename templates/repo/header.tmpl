@@ -55,7 +55,7 @@
 			{{end}}
 
 			{{if .Permission.CanRead $.UnitTypeCode}}
-			<a class="{{if .PageIsViewCode}}active{{end}} item" href="{{.RepoLink}}{{if (ne .BranchName .Repository.DefaultBranch)}}/src/{{.BranchNameSubURL | EscapePound}}{{end}}">
+			<a class="{{if .PageIsViewCode}}active{{end}} item" href="{{.RepoLink}}/src{{if (ne .BranchName .Repository.DefaultBranch)}}/{{.BranchNameSubURL | EscapePound}}{{end}}">
 				<i class="octicon octicon-code"></i> {{.dlt.Tr "repo.code"}}
 			</a>
 			{{end}}

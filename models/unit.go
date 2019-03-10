@@ -77,7 +77,7 @@ var (
 	UnitCode = Unit{
 		UnitTypeCode,
 		"repo.code",
-		"/",
+		"/src",
 		"repo.code.desc",
 		0,
 	}

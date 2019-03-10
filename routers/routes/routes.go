@@ -736,11 +736,12 @@ func RegisterRoutes(m *macaron.Macaron) {
 		}, repo.MustBeNotEmpty, context.RepoRef(), reqRepoCodeReader)
 
 		m.Group("/src", func() {
-			m.Get("/branch/*", context.RepoRefByType(context.RepoRefBranch), repo.Home)
-			m.Get("/tag/*", context.RepoRefByType(context.RepoRefTag), repo.Home)
-			m.Get("/commit/*", context.RepoRefByType(context.RepoRefCommit), repo.Home)
+			m.Get("", context.RepoRefByType(context.RepoRefAny), repo.Code)
+			m.Get("/branch/*", context.RepoRefByType(context.RepoRefBranch), repo.Code)
+			m.Get("/tag/*", context.RepoRefByType(context.RepoRefTag), repo.Code)
+			m.Get("/commit/*", context.RepoRefByType(context.RepoRefCommit), repo.Code)
 			// "/*" route is deprecated, and kept for backward compatibility
-			m.Get("/*", context.RepoRefByType(context.RepoRefLegacy), repo.Home)
+			m.Get("/*", context.RepoRefByType(context.RepoRefLegacy), repo.Code)
 		}, repo.SetEditorconfigIfExists)
 
 		m.Group("", func() {

@@ -293,16 +293,27 @@ func renderFile(ctx *context.Context, entry *git.TreeEntry, treeLink, rawLink st
 	}
 }
 
-// Home render repository home page
-func Home(ctx *context.Context) {
+// Code render repository code
+func Code(ctx *context.Context) {
 	if len(ctx.Repo.Units) > 0 {
-		var firstUnit *models.Unit
 		for _, repoUnit := range ctx.Repo.Units {
 			if repoUnit.Type == models.UnitTypeCode {
 				renderCode(ctx)
 				return
 			}
+		}
 
+	}
+
+	ctx.NotFound("Code", fmt.Errorf(ctx.Tr("units.error.no_unit_allowed_repo")))
+}
+
+// Home render repository home page
+func Home(ctx *context.Context) {
+
+	if len(ctx.Repo.Units) > 0 {
+		var firstUnit *models.Unit
+		for _, repoUnit := range ctx.Repo.Units {
 			unit, ok := models.Units[repoUnit.Type]
 			if ok && (firstUnit == nil || !firstUnit.IsLessThan(unit)) {
 				firstUnit = &unit
