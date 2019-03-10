@@ -48,6 +48,12 @@
 {{if not .IsDiffCompare}}
 	<div class="ui tabs container">
 		<div class="ui tabular stackable menu navbar">
+			{{if and (.Permission.CanRead $.UnitTypeReleases) (not .IsEmptyRepo) }}
+			<a class="{{if .PageIsReleaseList}}active{{end}} item" href="{{.RepoLink}}/releases">
+				<i class="octicon octicon-tag"></i> {{.dlt.Tr "repo.releases"}} <span class="ui {{if not .Repository.NumReleases}}gray{{else}}blue{{end}} small label">{{.Repository.NumReleases}}</span>
+			</a>
+			{{end}}
+
 			{{if .Permission.CanRead $.UnitTypeCode}}
 			<a class="{{if .PageIsViewCode}}active{{end}} item" href="{{.RepoLink}}{{if (ne .BranchName .Repository.DefaultBranch)}}/src/{{.BranchNameSubURL | EscapePound}}{{end}}">
 				<i class="octicon octicon-code"></i> {{.dlt.Tr "repo.code"}}
@@ -70,12 +76,6 @@
 				<a class="{{if .PageIsPullList}}active{{end}} item" href="{{.RepoLink}}/pulls">
 					<i class="octicon octicon-git-pull-request"></i> {{.dlt.Tr "repo.pulls"}} <span class="ui {{if not .Repository.NumOpenPulls}}gray{{else}}blue{{end}} small label">{{.Repository.NumOpenPulls}}</span>
 				</a>
-			{{end}}
-
-			{{if and (.Permission.CanRead $.UnitTypeReleases) (not .IsEmptyRepo) }}
-			<a class="{{if .PageIsReleaseList}}active{{end}} item" href="{{.RepoLink}}/releases">
-				<i class="octicon octicon-tag"></i> {{.dlt.Tr "repo.releases"}} <span class="ui {{if not .Repository.NumReleases}}gray{{else}}blue{{end}} small label">{{.Repository.NumReleases}}</span>
-			</a>
 			{{end}}
 
 			{{if or (.Permission.CanRead $.UnitTypeWiki) (.Permission.CanRead $.UnitTypeExternalWiki)}}
