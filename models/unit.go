@@ -77,9 +77,9 @@ var (
 	UnitCode = Unit{
 		UnitTypeCode,
 		"repo.code",
-		"/",
+		"/src",
 		"repo.code.desc",
-		0,
+		1,
 	}
 
 	UnitIssues = Unit{
@@ -87,7 +87,7 @@ var (
 		"repo.issues",
 		"/issues",
 		"repo.issues.desc",
-		1,
+		2,
 	}
 
 	UnitExternalTracker = Unit{
@@ -95,7 +95,7 @@ var (
 		"repo.ext_issues",
 		"/issues",
 		"repo.ext_issues.desc",
-		1,
+		2,
 	}
 
 	UnitPullRequests = Unit{
@@ -103,7 +103,7 @@ var (
 		"repo.pulls",
 		"/pulls",
 		"repo.pulls.desc",
-		2,
+		3,
 	}
 
 	UnitReleases = Unit{
@@ -111,7 +111,7 @@ var (
 		"repo.releases",
 		"/releases",
 		"repo.releases.desc",
-		3,
+		0,
 	}
 
 	UnitWiki = Unit{
