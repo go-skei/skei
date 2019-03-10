@@ -18,12 +18,12 @@
 								<i class="octicon octicon-link"></i>
 								<a href="{{.Website}}" rel="nofollow">{{.Website}}</a>
 							{{end}}
-							<i class="octicon octicon-clock"></i> {{$.i18n.Tr "user.join_on"}} {{.CreatedUnix.FormatShort}}
+							<i class="octicon octicon-clock"></i> {{$.dlt.Tr "user.join_on"}} {{.CreatedUnix.FormatShort}}
 					</div>
 				  </div>
 				</div>
 			{{else}}
-				<div>{{$.i18n.Tr "explore.org_no_results"}}</div>
+				<div>{{$.dlt.Tr "explore.org_no_results"}}</div>
 			{{end}}
 		</div>
 

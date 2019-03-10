@@ -16,33 +16,33 @@
 					</div>
 					<div class="ui five wide column center">
 						<div class="meta">
-							{{$.i18n.Tr "org.members.membership_visibility"}}
+							{{$.dlt.Tr "org.members.membership_visibility"}}
 						</div>
 						<div class="meta">
 							{{ $isPublic := .IsPublicMember $.Org.ID}}
 							{{if $isPublic}}
-								<strong>{{$.i18n.Tr "org.members.public"}}</strong>
-								{{if or (eq $.SignedUser.ID .ID) $.IsOrganizationOwner}}(<a href="{{$.OrgLink}}/members/action/private?uid={{.ID}}">{{$.i18n.Tr "org.members.public_helper"}}</a>){{end}}
+								<strong>{{$.dlt.Tr "org.members.public"}}</strong>
+								{{if or (eq $.SignedUser.ID .ID) $.IsOrganizationOwner}}(<a href="{{$.OrgLink}}/members/action/private?uid={{.ID}}">{{$.dlt.Tr "org.members.public_helper"}}</a>){{end}}
 							{{else}}
-								<strong>{{$.i18n.Tr "org.members.private"}}</strong>
-								{{if or (eq $.SignedUser.ID .ID) $.IsOrganizationOwner}}(<a href="{{$.OrgLink}}/members/action/public?uid={{.ID}}">{{$.i18n.Tr "org.members.private_helper"}}</a>){{end}}
+								<strong>{{$.dlt.Tr "org.members.private"}}</strong>
+								{{if or (eq $.SignedUser.ID .ID) $.IsOrganizationOwner}}(<a href="{{$.OrgLink}}/members/action/public?uid={{.ID}}">{{$.dlt.Tr "org.members.private_helper"}}</a>){{end}}
 							{{end}}
 						</div>
 					</div>
 					<div class="ui three wide column center">
 						<div class="meta">
-							{{$.i18n.Tr "org.members.member_role"}}
+							{{$.dlt.Tr "org.members.member_role"}}
 						</div>
 						<div class="meta">
-							<strong>{{if .IsUserOrgOwner $.Org.ID}}<span class="octicon octicon-shield"></span> {{$.i18n.Tr "org.members.owner"}}{{else}}{{$.i18n.Tr "org.members.member"}}{{end}}</strong>
+							<strong>{{if .IsUserOrgOwner $.Org.ID}}<span class="octicon octicon-shield"></span> {{$.dlt.Tr "org.members.owner"}}{{else}}{{$.dlt.Tr "org.members.member"}}{{end}}</strong>
 						</div>
 					</div>
 					<div class="ui four wide column">
 						<div class="text right">
 							{{if eq $.SignedUser.ID .ID}}
-								<a class="ui red small button" href="{{$.OrgLink}}/members/action/leave?uid={{.ID}}">{{$.i18n.Tr "org.members.leave"}}</a>
+								<a class="ui red small button" href="{{$.OrgLink}}/members/action/leave?uid={{.ID}}">{{$.dlt.Tr "org.members.leave"}}</a>
 							{{else if $.IsOrganizationOwner}}
-								<a class="ui red small button" href="{{$.OrgLink}}/members/action/remove?uid={{.ID}}">{{$.i18n.Tr "org.members.remove"}}</a>
+								<a class="ui red small button" href="{{$.OrgLink}}/members/action/remove?uid={{.ID}}">{{$.dlt.Tr "org.members.remove"}}</a>
 							{{end}}
 						</div>
 					</div>

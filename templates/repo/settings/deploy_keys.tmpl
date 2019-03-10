@@ -5,12 +5,12 @@
 	<div class="ui container">
 		{{template "base/alert" .}}
 		<h4 class="ui top attached header">
-			{{.i18n.Tr "repo.settings.deploy_keys"}}
+			{{.dlt.Tr "repo.settings.deploy_keys"}}
 			<div class="ui right">
 			{{if not .DisableSSH}}
-				<div class="ui blue tiny show-panel button" data-panel="#add-deploy-key-panel">{{.i18n.Tr "repo.settings.add_deploy_key"}}</div>
+				<div class="ui blue tiny show-panel button" data-panel="#add-deploy-key-panel">{{.dlt.Tr "repo.settings.add_deploy_key"}}</div>
 			{{else}}
-				<div class="ui blue tiny button disabled">{{.i18n.Tr "settings.ssh_disabled"}}</div>
+				<div class="ui blue tiny button disabled">{{.dlt.Tr "settings.ssh_disabled"}}</div>
 			{{end}}
 			</div>
 		</h4>
@@ -21,56 +21,56 @@
 						<div class="item">
 						    <div class="right floated content">
 									<button class="ui red tiny button delete-button" data-url="{{$.Link}}/delete" data-id="{{.ID}}">
-										{{$.i18n.Tr "settings.delete_key"}}
+										{{$.dlt.Tr "settings.delete_key"}}
 									</button>
 						    </div>
-								<i class="mega-octicon octicon-key {{if .HasRecentActivity}}green{{end}}" {{if .HasRecentActivity}}data-content="{{$.i18n.Tr "settings.key_state_desc"}}" data-variation="inverted"{{end}}></i>
+								<i class="mega-octicon octicon-key {{if .HasRecentActivity}}green{{end}}" {{if .HasRecentActivity}}data-content="{{$.dlt.Tr "settings.key_state_desc"}}" data-variation="inverted"{{end}}></i>
 								<div class="content">
 									<strong>{{.Name}}</strong>
 									<div class="print meta">
 										{{.Fingerprint}}
 									</div>
 									<div class="activity meta">
-										<i>{{$.i18n.Tr "settings.add_on"}} <span>{{.CreatedUnix.FormatShort}}</span> —  <i class="octicon octicon-info"></i> {{if .HasUsed}}{{$.i18n.Tr "settings.last_used"}} <span {{if .HasRecentActivity}}class="green"{{end}}>{{.UpdatedUnix.FormatShort}}</span>{{else}}{{$.i18n.Tr "settings.no_activity"}}{{end}} - <span>{{$.i18n.Tr "settings.can_read_info"}}{{if not .IsReadOnly}} / {{$.i18n.Tr "settings.can_write_info"}} {{end}}</span></i>
+										<i>{{$.dlt.Tr "settings.add_on"}} <span>{{.CreatedUnix.FormatShort}}</span> —  <i class="octicon octicon-info"></i> {{if .HasUsed}}{{$.dlt.Tr "settings.last_used"}} <span {{if .HasRecentActivity}}class="green"{{end}}>{{.UpdatedUnix.FormatShort}}</span>{{else}}{{$.dlt.Tr "settings.no_activity"}}{{end}} - <span>{{$.dlt.Tr "settings.can_read_info"}}{{if not .IsReadOnly}} / {{$.dlt.Tr "settings.can_write_info"}} {{end}}</span></i>
 									</div>
 								</div>
 						</div>
 					{{end}}
 				</div>
 			{{else}}
-				{{.i18n.Tr "repo.settings.no_deploy_keys"}}
+				{{.dlt.Tr "repo.settings.no_deploy_keys"}}
 			{{end}}
 		</div>
 		<br>
 		<div {{if not .HasError}}class="hide"{{end}} id="add-deploy-key-panel">
 			<h4 class="ui top attached header">
-				{{.i18n.Tr "repo.settings.add_deploy_key"}}
+				{{.dlt.Tr "repo.settings.add_deploy_key"}}
 			</h4>
 			<div class="ui attached segment">
 				<form class="ui form" action="{{.Link}}" method="post">
 					{{.CsrfTokenHtml}}
 					<div class="field">
-						{{.i18n.Tr "repo.settings.deploy_key_desc"}}
+						{{.dlt.Tr "repo.settings.deploy_key_desc"}}
 					</div>
 					<div class="field {{if .Err_Title}}error{{end}}">
-						<label for="title">{{.i18n.Tr "repo.settings.title"}}</label>
+						<label for="title">{{.dlt.Tr "repo.settings.title"}}</label>
 						<input id="ssh-key-title" name="title" value="{{.title}}" autofocus required>
 					</div>
 					<div class="field {{if .Err_Content}}error{{end}}">
-						<label for="content">{{.i18n.Tr "repo.settings.deploy_key_content"}}</label>
+						<label for="content">{{.dlt.Tr "repo.settings.deploy_key_content"}}</label>
 						<textarea id="ssh-key-content" name="content" required>{{.content}}</textarea>
 					</div>
 					<div class="field">
 						<div class="ui checkbox {{if .Err_IsWritable}}error{{end}}">
 							<input id="ssh-key-is-writable" name="is_writable" class="hidden" type="checkbox" value="1">
 							<label for="is_writable">
-								{{.i18n.Tr "repo.settings.is_writable"}}
+								{{.dlt.Tr "repo.settings.is_writable"}}
 							</label>
-							<small style="padding-left: 26px;">{{$.i18n.Tr "repo.settings.is_writable_info" | Str2html}}</small>
+							<small style="padding-left: 26px;">{{$.dlt.Tr "repo.settings.is_writable_info" | Str2html}}</small>
 						</div>
 					</div>
 					<button class="ui green button">
-						{{.i18n.Tr "repo.settings.add_deploy_key"}}
+						{{.dlt.Tr "repo.settings.add_deploy_key"}}
 					</button>
 				</form>
 			</div>
@@ -81,19 +81,19 @@
 <div class="ui small basic delete modal">
 	<div class="ui icon header">
 		<i class="trash icon"></i>
-		{{.i18n.Tr "repo.settings.deploy_key_deletion"}}
+		{{.dlt.Tr "repo.settings.deploy_key_deletion"}}
 	</div>
 	<div class="content">
-		<p>{{.i18n.Tr "repo.settings.deploy_key_deletion_desc"}}</p>
+		<p>{{.dlt.Tr "repo.settings.deploy_key_deletion_desc"}}</p>
 	</div>
 	<div class="actions">
 		<div class="ui red basic inverted cancel button">
 			<i class="remove icon"></i>
-			{{.i18n.Tr "modal.no"}}
+			{{.dlt.Tr "modal.no"}}
 		</div>
 		<div class="ui green basic inverted ok button">
 			<i class="checkmark icon"></i>
-			{{.i18n.Tr "modal.yes"}}
+			{{.dlt.Tr "modal.yes"}}
 		</div>
 	</div>
 </div>

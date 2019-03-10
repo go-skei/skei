@@ -213,6 +213,30 @@ func (f UpdateThemeForm) IsThemeExists() bool {
 	return exists
 }
 
+// UpdateDetailLevelForm form for updating a users' detail level
+type UpdateDetailLevelForm struct {
+	DetailLevel string `binding:"Required;MaxSize(30)"`
+}
+
+// Validate validates the field
+func (f *UpdateDetailLevelForm) Validate(ctx *macaron.Context, errs binding.Errors) binding.Errors {
+	return validate(errs, ctx.Data, f, ctx.Locale)
+}
+
+// IsDetailLevelExists checks if the detail level is a detail level available in the config.
+func (f UpdateDetailLevelForm) IsDetailLevelExists() bool {
+	var exists bool
+
+	for _, v := range setting.UI.DetailLevels {
+		if strings.ToLower(v) == strings.ToLower(f.DetailLevel) {
+			exists = true
+			break
+		}
+	}
+
+	return exists
+}
+
 // ChangePasswordForm form for changing password
 type ChangePasswordForm struct {
 	OldPassword string `form:"old_password" binding:"MaxSize(255)"`

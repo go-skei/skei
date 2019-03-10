@@ -5,12 +5,12 @@
 			<form class="ui form" action="{{.Link}}" method="post">
 				{{.CsrfTokenHtml}}
 				<h3 class="ui top attached header">
-					{{.i18n.Tr "new_repo"}}
+					{{.dlt.Tr "new_repo"}}
 				</h3>
 				<div class="ui attached segment">
 					{{template "base/alert" .}}
 					<div class="inline required field {{if .Err_Owner}}error{{end}}">
-						<label>{{.i18n.Tr "repo.owner"}}</label>
+						<label>{{.dlt.Tr "repo.owner"}}</label>
 						<div class="ui selection owner dropdown">
 							<input type="hidden" id="uid" name="uid" value="{{.ContextUser.ID}}" required>
 							<span class="text">
@@ -34,24 +34,24 @@
 					</div>
 
 					<div class="inline required field {{if .Err_RepoName}}error{{end}}">
-						<label for="repo_name">{{.i18n.Tr "repo.repo_name"}}</label>
+						<label for="repo_name">{{.dlt.Tr "repo.repo_name"}}</label>
 						<input id="repo_name" name="repo_name" value="{{.repo_name}}" autofocus required>
-						<span class="help">{{.i18n.Tr "repo.repo_name_helper"}}</span>
+						<span class="help">{{.dlt.Tr "repo.repo_name_helper"}}</span>
 					</div>
 					<div class="inline field">
-						<label>{{.i18n.Tr "repo.visibility"}}</label>
+						<label>{{.dlt.Tr "repo.visibility"}}</label>
 						<div class="ui checkbox">
 							{{if .IsForcedPrivate}}
 								<input name="private" type="checkbox" checked readonly>
-								<label>{{.i18n.Tr "repo.visibility_helper_forced" | Safe}}</label>
+								<label>{{.dlt.Tr "repo.visibility_helper_forced" | Safe}}</label>
 							{{else}}
 								<input name="private" type="checkbox" {{if .private}}checked{{end}}>
-								<label>{{.i18n.Tr "repo.visibility_helper" | Safe}}</label>
+								<label>{{.dlt.Tr "repo.visibility_helper" | Safe}}</label>
 							{{end}}
 						</div>
 					</div>
 					<div class="inline field {{if .Err_Description}}error{{end}}">
-						<label for="description">{{.i18n.Tr "repo.repo_desc"}}</label>
+						<label for="description">{{.dlt.Tr "repo.repo_desc"}}</label>
 						<textarea id="description" name="description">{{.description}}</textarea>
 					</div>
 
@@ -61,7 +61,7 @@
 						<label>.gitignore</label>
 						<div class="ui multiple search normal selection dropdown">
 							<input type="hidden" name="gitignores" value="{{.gitignores}}">
-							<div class="default text">{{.i18n.Tr "repo.repo_gitignore_helper"}}</div>
+							<div class="default text">{{.dlt.Tr "repo.repo_gitignore_helper"}}</div>
 							<div class="menu">
 								{{range .Gitignores}}
 									<div class="item" data-value="{{.}}">{{.}}</div>
@@ -70,10 +70,10 @@
 						</div>
 					</div>
 					<div class="inline field">
-						<label>{{.i18n.Tr "repo.license"}}</label>
+						<label>{{.dlt.Tr "repo.license"}}</label>
 						<div class="ui search selection dropdown">
 							<input type="hidden" name="license" value="{{.license}}">
-							<div class="default text">{{.i18n.Tr "repo.license_helper"}}</div>
+							<div class="default text">{{.dlt.Tr "repo.license_helper"}}</div>
 							<div class="menu">
 								{{range .Licenses}}
 									<div class="item" data-value="{{.}}">{{.}}</div>
@@ -83,10 +83,10 @@
 					</div>
 
 					<div class="inline field">
-						<label>{{.i18n.Tr "repo.readme"}}</label>
+						<label>{{.dlt.Tr "repo.readme"}}</label>
 						<div class="ui selection dropdown">
 							<input type="hidden" name="readme" value="{{.readme}}">
-							<div class="default text">{{.i18n.Tr "repo.readme_helper"}}</div>
+							<div class="default text">{{.dlt.Tr "repo.readme_helper"}}</div>
 							<div class="menu">
 								{{range .Readmes}}
 									<div class="item" data-value="{{.}}">{{.}}</div>
@@ -97,16 +97,16 @@
 					<div class="inline field">
 						<div class="ui checkbox" id="auto-init">
 							<input class="hidden" name="auto_init" type="checkbox" tabindex="0" {{if .auto_init}}checked{{end}}>
-							<label>{{.i18n.Tr "repo.auto_init"}}</label>
+							<label>{{.dlt.Tr "repo.auto_init"}}</label>
 						</div>
 					</div>
 
 					<div class="inline field">
 						<label></label>
 						<button class="ui green button">
-							{{.i18n.Tr "repo.create_repo"}}
+							{{.dlt.Tr "repo.create_repo"}}
 						</button>
-						<a class="ui button" href="{{AppSubUrl}}/">{{.i18n.Tr "cancel"}}</a>
+						<a class="ui button" href="{{AppSubUrl}}/">{{.dlt.Tr "cancel"}}</a>
 					</div>
 				</div>
 			</form>

@@ -11,8 +11,8 @@
 			</div>
 			{{if not .Repository.IsArchived}}
 				<div class="column right aligned">
-					<a class="ui grey button" href="{{.RepoLink}}/milestones/{{.MilestoneID}}/edit">{{.i18n.Tr "repo.milestones.edit"}}</a>
-					<a class="ui green button" href="{{.RepoLink}}/issues/new?milestone={{.MilestoneID}}">{{.i18n.Tr "repo.issues.new"}}</a>
+					<a class="ui grey button" href="{{.RepoLink}}/milestones/{{.MilestoneID}}/edit">{{.dlt.Tr "repo.milestones.edit"}}</a>
+					<a class="ui green button" href="{{.RepoLink}}/issues/new?milestone={{.MilestoneID}}">{{.dlt.Tr "repo.issues.new"}}</a>
 				</div>
 			{{end}}
 		</div>
@@ -20,17 +20,17 @@
             <div class="column">
                 {{ $closedDate:= TimeSinceUnix .Milestone.ClosedDateUnix $.Lang }}
                 {{if .IsClosed}}
-                    <span class="octicon octicon-clock"></span> {{$.i18n.Tr "repo.milestones.closed" $closedDate|Str2html}}
+                    <span class="octicon octicon-clock"></span> {{$.dlt.Tr "repo.milestones.closed" $closedDate|Str2html}}
                 {{else}}
                     <span class="octicon octicon-calendar"></span>
                     {{if .Milestone.DeadlineString}}
                         <span {{if .IsOverdue}}class="overdue"{{end}}>{{.Milestone.DeadlineString}}</span>
                     {{else}}
-                        {{$.i18n.Tr "repo.milestones.no_due_date"}}
+                        {{$.dlt.Tr "repo.milestones.no_due_date"}}
                     {{end}}
                 {{end}}
                 &nbsp; 
-                <b>{{.i18n.Tr "repo.milestones.completeness" .Milestone.Completeness}}</b>
+                <b>{{.dlt.Tr "repo.milestones.completeness" .Milestone.Completeness}}</b>
             </div>
         </div>
 		<div class="ui divider"></div>
@@ -39,11 +39,11 @@
 				<div class="ui tiny basic status buttons">
 					<a class="ui {{if not .IsShowClosed}}green active{{end}} basic button" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state=open&labels={{.SelectLabels}}&assignee={{.AssigneeID}}">
 						<i class="octicon octicon-issue-opened"></i>
-						{{.i18n.Tr "repo.issues.open_tab" .IssueStats.OpenCount}}
+						{{.dlt.Tr "repo.issues.open_tab" .IssueStats.OpenCount}}
 					</a>
 					<a class="ui {{if .IsShowClosed}}red active{{end}} basic button" href="{{$.Link}}?q={{$.Keyword}}&type={{.ViewType}}&sort={{$.SortType}}&state=closed&labels={{.SelectLabels}}&assignee={{.AssigneeID}}">
 						<i class="octicon octicon-issue-closed"></i>
-						{{.i18n.Tr "repo.issues.close_tab" .IssueStats.ClosedCount}}
+						{{.dlt.Tr "repo.issues.close_tab" .IssueStats.ClosedCount}}
 					</a>
 				</div>
 			</div>
@@ -52,11 +52,11 @@
 					<!-- Label -->
 					<div class="ui {{if not .Labels}}disabled{{end}} dropdown jump item" style="margin-left: auto">
 						<span class="text">
-							{{.i18n.Tr "repo.issues.filter_label"}}
+							{{.dlt.Tr "repo.issues.filter_label"}}
 							<i class="dropdown icon"></i>
 						</span>
 						<div class="menu">
-							<a class="item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_label_no_select"}}</a>
+							<a class="item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_label_no_select"}}</a>
 							{{range .Labels}}
 								<a class="item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&labels={{.ID}}&assignee={{$.AssigneeID}}"><span class="octicon {{if eq $.SelectLabels .ID}}octicon-check{{end}}"></span><span class="label color" style="background-color: {{.Color}}"></span> {{.Name}}</a>
 							{{end}}
@@ -66,11 +66,11 @@
 					<!-- Assignee -->
 					<div class="ui {{if not .Assignees}}disabled{{end}} dropdown jump item">
 						<span class="text">
-							{{.i18n.Tr "repo.issues.filter_assignee"}}
+							{{.dlt.Tr "repo.issues.filter_assignee"}}
 							<i class="dropdown icon"></i>
 						</span>
 						<div class="menu">
-							<a class="item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}">{{.i18n.Tr "repo.issues.filter_assginee_no_select"}}</a>
+							<a class="item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}">{{.dlt.Tr "repo.issues.filter_assginee_no_select"}}</a>
 							{{range .Assignees}}
 								<a class="{{if eq $.AssigneeID .ID}}active selected{{end}} item" href="{{$.Link}}?type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&labels={{$.SelectLabels}}&assignee={{.ID}}"><img src="{{.RelAvatarLink}}"> {{.Name}}</a>
 							{{end}}
@@ -81,14 +81,14 @@
 						<!-- Type -->
 						<div class="ui dropdown type jump item">
 							<span class="text">
-								{{.i18n.Tr "repo.issues.filter_type"}}
+								{{.dlt.Tr "repo.issues.filter_type"}}
 								<i class="dropdown icon"></i>
 							</span>
 							<div class="menu">
-								<a class="{{if eq .ViewType "all"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=all&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_type.all_issues"}}</a>
-								<a class="{{if eq .ViewType "assigned"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=assigned&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{.SignedUser.ID}}">{{.i18n.Tr "repo.issues.filter_type.assigned_to_you"}}</a>
-								<a class="{{if eq .ViewType "created_by"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=created_by&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_type.created_by_you"}}</a>
-								<a class="{{if eq .ViewType "mentioned"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=mentioned&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_type.mentioning_you"}}</a>
+								<a class="{{if eq .ViewType "all"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=all&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_type.all_issues"}}</a>
+								<a class="{{if eq .ViewType "assigned"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=assigned&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{.SignedUser.ID}}">{{.dlt.Tr "repo.issues.filter_type.assigned_to_you"}}</a>
+								<a class="{{if eq .ViewType "created_by"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=created_by&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_type.created_by_you"}}</a>
+								<a class="{{if eq .ViewType "mentioned"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type=mentioned&sort={{$.SortType}}&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_type.mentioning_you"}}</a>
 							</div>
 						</div>
 					{{end}}
@@ -96,16 +96,16 @@
 					<!-- Sort -->
 					<div class="ui dropdown type jump item">
 						<span class="text">
-							{{.i18n.Tr "repo.issues.filter_sort"}}
+							{{.dlt.Tr "repo.issues.filter_sort"}}
 							<i class="dropdown icon"></i>
 						</span>
 						<div class="menu">
-							<a class="{{if or (eq .SortType "latest") (not .SortType)}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=latest&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_sort.latest"}}</a>
-							<a class="{{if eq .SortType "oldest"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=oldest&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_sort.oldest"}}</a>
-							<a class="{{if eq .SortType "recentupdate"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=recentupdate&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_sort.recentupdate"}}</a>
-							<a class="{{if eq .SortType "leastupdate"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=leastupdate&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_sort.leastupdate"}}</a>
-							<a class="{{if eq .SortType "mostcomment"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=mostcomment&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_sort.mostcomment"}}</a>
-							<a class="{{if eq .SortType "leastcomment"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=leastcomment&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.i18n.Tr "repo.issues.filter_sort.leastcomment"}}</a>
+							<a class="{{if or (eq .SortType "latest") (not .SortType)}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=latest&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_sort.latest"}}</a>
+							<a class="{{if eq .SortType "oldest"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=oldest&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_sort.oldest"}}</a>
+							<a class="{{if eq .SortType "recentupdate"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=recentupdate&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_sort.recentupdate"}}</a>
+							<a class="{{if eq .SortType "leastupdate"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=leastupdate&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_sort.leastupdate"}}</a>
+							<a class="{{if eq .SortType "mostcomment"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=mostcomment&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_sort.mostcomment"}}</a>
+							<a class="{{if eq .SortType "leastcomment"}}active{{end}} item" href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort=leastcomment&state={{$.State}}&labels={{.SelectLabels}}&assignee={{$.AssigneeID}}">{{.dlt.Tr "repo.issues.filter_sort.leastcomment"}}</a>
 						</div>
 					</div>
 				</div>
@@ -114,8 +114,8 @@
 		<div id="issue-actions" class="ui stackable grid">
 			<div class="six wide column">
 				<div class="ui basic status buttons">
-					<div class="ui green active basic button issue-action" data-action="open" data-url="{{$.RepoLink}}/issues/status">{{.i18n.Tr "repo.issues.action_open"}}</div>
-					<div class="ui red active basic button issue-action" data-action="close" data-url="{{$.RepoLink}}/issues/status">{{.i18n.Tr "repo.issues.action_close"}}</div>
+					<div class="ui green active basic button issue-action" data-action="open" data-url="{{$.RepoLink}}/issues/status">{{.dlt.Tr "repo.issues.action_open"}}</div>
+					<div class="ui red active basic button issue-action" data-action="close" data-url="{{$.RepoLink}}/issues/status">{{.dlt.Tr "repo.issues.action_close"}}</div>
 				</div>
 			</div>
 
@@ -128,7 +128,7 @@
 					<!-- Labels -->
 					<div class="ui {{if not .Labels}}disabled{{end}} dropdown jump item" style="margin-left: auto">
 						<span class="text">
-							{{.i18n.Tr "repo.issues.action_label"}}
+							{{.dlt.Tr "repo.issues.action_label"}}
 							<i class="dropdown icon"></i>
 						</span>
 						<div class="menu">
@@ -143,12 +143,12 @@
 					<!-- Assignees -->
 					<div class="ui {{if not .Assignees}}disabled{{end}} dropdown jump item">
 						<span class="text">
-							{{.i18n.Tr "repo.issues.action_assignee"}}
+							{{.dlt.Tr "repo.issues.action_assignee"}}
 							<i class="dropdown icon"></i>
 						</span>
 						<div class="menu">
 							<div class="item issue-action" data-element-id="0" data-url="{{$.Link}}/assignee">
-								{{.i18n.Tr "repo.issues.action_assignee_no_select"}}
+								{{.dlt.Tr "repo.issues.action_assignee_no_select"}}
 							</div>
 							{{range .Assignees}}
 								<div class="item issue-action" data-element-id="{{.ID}}" data-url="{{$.RepoLink}}/issues/assignee">
@@ -187,7 +187,7 @@
 					{{end}}
 
 					<p class="desc">
-						{{$.i18n.Tr "repo.issues.opened_by" $timeStr .Poster.HomeLink .Poster.Name | Safe}}
+						{{$.dlt.Tr "repo.issues.opened_by" $timeStr .Poster.HomeLink .Poster.Name | Safe}}
 						{{$tasks := .GetTasks}}
 						{{if gt $tasks 0}}
 							{{$tasksDone := .GetTasksDone}}
@@ -213,7 +213,7 @@
 					<div class="center page buttons">
 						<div class="ui borderless pagination menu">
 							<a class="{{if not .HasPrevious}}disabled{{end}} item" {{if .HasPrevious}}href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&labels={{$.SelectLabels}}&assignee={{$.AssigneeID}}&page={{.Previous}}"{{end}}>
-								<i class="left arrow icon"></i> {{$.i18n.Tr "repo.issues.previous"}}
+								<i class="left arrow icon"></i> {{$.dlt.Tr "repo.issues.previous"}}
 							</a>
 							{{range .Pages}}
 								{{if eq .Num -1}}
@@ -223,7 +223,7 @@
 								{{end}}
 							{{end}}
 							<a class="{{if not .HasNext}}disabled{{end}} item" {{if .HasNext}}href="{{$.Link}}?q={{$.Keyword}}&type={{$.ViewType}}&sort={{$.SortType}}&state={{$.State}}&labels={{$.SelectLabels}}&assignee={{$.AssigneeID}}&page={{.Next}}"{{end}}>
-								{{$.i18n.Tr "repo.issues.next"}}&nbsp;<i class="icon right arrow"></i>
+								{{$.dlt.Tr "repo.issues.next"}}&nbsp;<i class="icon right arrow"></i>
 							</a>
 						</div>
 					</div>

@@ -7,7 +7,7 @@
 			<div class="twelve wide column content">
 				{{template "base/alert" .}}
 				<h4 class="ui top attached header">
-					{{if .PageIsSettingsHooksNew}}{{.i18n.Tr "repo.settings.add_webhook"}}{{else}}{{.i18n.Tr "repo.settings.update_webhook"}}{{end}}
+					{{if .PageIsSettingsHooksNew}}{{.dlt.Tr "repo.settings.add_webhook"}}{{else}}{{.dlt.Tr "repo.settings.update_webhook"}}{{end}}
 					<div class="ui right">
 						{{if eq .HookType "gitea"}}
 							<img class="img-13" src="{{AppSubUrl}}/img/gitea-sm.png">

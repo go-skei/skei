@@ -2,22 +2,22 @@
 
 <div class="user notification">
 	<div class="ui container">
-		<h1 class="ui dividing header">{{.i18n.Tr "notification.notifications"}}</h1>
+		<h1 class="ui dividing header">{{.dlt.Tr "notification.notifications"}}</h1>
 
 		<div class="ui top attached tabular menu">
 			<a href="{{AppSubUrl}}/notifications?q=unread" class="{{if eq .Status 1}}active{{end}} item">
-				{{.i18n.Tr "notification.unread"}}
+				{{.dlt.Tr "notification.unread"}}
 				{{if .NotificationUnreadCount}}
 					<div class="ui label">{{.NotificationUnreadCount}}</div>
 				{{end}}
 			</a>
 			<a href="{{AppSubUrl}}/notifications?q=read" class="{{if eq .Status 2}}active{{end}} item">
-				{{.i18n.Tr "notification.read"}}
+				{{.dlt.Tr "notification.read"}}
 			</a>
 			{{if and (eq .Status 1) (.NotificationUnreadCount)}}
 				<form action="{{AppSubUrl}}/notifications/purge" method="POST" style="margin-left: auto;">
 					{{$.CsrfTokenHtml}}
-					<button class="ui mini button primary" title='{{$.i18n.Tr "notification.mark_all_as_read"}}'>
+					<button class="ui mini button primary" title='{{$.dlt.Tr "notification.mark_all_as_read"}}'>
 						<i class="octicon octicon-checklist"></i>
 					</button>
 				</form>
@@ -26,9 +26,9 @@
 		<div class="ui bottom attached active tab segment">
 			{{if eq (len .Notifications) 0}}
 				{{if eq .Status 1}}
-					{{.i18n.Tr "notification.no_unread"}}
+					{{.dlt.Tr "notification.no_unread"}}
 				{{else}}
-					{{.i18n.Tr "notification.no_read"}}
+					{{.dlt.Tr "notification.no_read"}}
 				{{end}}
 			{{else}}
 				<table class="ui unstackable striped very compact small selectable table">
@@ -76,7 +76,7 @@
 											{{$.CsrfTokenHtml}}
 											<input type="hidden" name="notification_id" value="{{$notification.ID}}" />
 											<input type="hidden" name="status" value="pinned" />
-											<button class="ui mini button" title='{{$.i18n.Tr "notification.pin"}}'>
+											<button class="ui mini button" title='{{$.dlt.Tr "notification.pin"}}'>
 												<i class="octicon octicon-pin"></i>
 											</button>
 										</form>
@@ -88,7 +88,7 @@
 											{{$.CsrfTokenHtml}}
 											<input type="hidden" name="notification_id" value="{{$notification.ID}}" />
 											<input type="hidden" name="status" value="read" />
-											<button class="ui mini button" title='{{$.i18n.Tr "notification.mark_as_read"}}'>
+											<button class="ui mini button" title='{{$.dlt.Tr "notification.mark_as_read"}}'>
 												<i class="octicon octicon-check"></i>
 											</button>
 										</form>
@@ -97,7 +97,7 @@
 											{{$.CsrfTokenHtml}}
 											<input type="hidden" name="notification_id" value="{{$notification.ID}}" />
 											<input type="hidden" name="status" value="unread" />
-											<button class="ui mini button" title='{{$.i18n.Tr "notification.mark_as_unread"}}'>
+											<button class="ui mini button" title='{{$.dlt.Tr "notification.mark_as_unread"}}'>
 												<i class="octicon octicon-bell"></i>
 											</button>
 										</form>

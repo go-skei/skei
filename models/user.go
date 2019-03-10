@@ -142,6 +142,7 @@ type User struct {
 	// Preferences
 	DiffViewStyle string `xorm:"NOT NULL DEFAULT ''"`
 	Theme         string `xorm:"NOT NULL DEFAULT ''"`
+	DetailLevel   string `xorm:"NOT NULL DEFAULT ''"`
 }
 
 // BeforeUpdate is invoked from XORM before updating this object.
@@ -172,6 +173,9 @@ func (u *User) AfterLoad() {
 	if u.Theme == "" {
 		u.Theme = setting.UI.DefaultTheme
 	}
+	if u.DetailLevel == "" {
+		u.DetailLevel = setting.UI.DefaultDetailLevel
+	}
 }
 
 // SetLastLogin set time to last login
@@ -189,6 +193,12 @@ func (u *User) UpdateDiffViewStyle(style string) error {
 func (u *User) UpdateTheme(themeName string) error {
 	u.Theme = themeName
 	return UpdateUserCols(u, "theme")
+}
+
+// UpdateDetailLevel updates a users' detail level irrespective of the site wide detail level
+func (u *User) UpdateDetailLevel(detailLevelName string) error {
+	u.DetailLevel = detailLevelName
+	return UpdateUserCols(u, "detail_level")
 }
 
 // getEmail returns an noreply email, if the user has set to keep his

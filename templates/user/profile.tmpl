@@ -5,7 +5,7 @@
 			<div class="ui five wide column">
 				<div class="ui card">
 					{{if eq .SignedUserName .Owner.Name}}
-						<a class="image poping up" href="{{AppSubUrl}}/user/settings" id="profile-avatar" data-content="{{.i18n.Tr "user.change_avatar"}}" data-variation="inverted tiny" data-position="bottom center">
+						<a class="image poping up" href="{{AppSubUrl}}/user/settings" id="profile-avatar" data-content="{{.dlt.Tr "user.change_avatar"}}" data-variation="inverted tiny" data-position="bottom center">
 							<img src="{{.Owner.SizedRelAvatarLink 290}}" title="{{.Owner.Name}}"/>
 						</a>
 					{{else}}
@@ -42,22 +42,22 @@
 									</li>
 								{{end}}
 							{{end}}
-							<li><i class="octicon octicon-clock"></i> {{.i18n.Tr "user.join_on"}} {{.Owner.CreatedUnix.FormatShort}}</li>
+							<li><i class="octicon octicon-clock"></i> {{.dlt.Tr "user.join_on"}} {{.Owner.CreatedUnix.FormatShort}}</li>
 							<li>
 								<i class="octicon octicon-person"></i>
 								<a href="{{.Owner.HomeLink}}/followers">
-									{{.Owner.NumFollowers}} {{.i18n.Tr "user.followers"}}
+									{{.Owner.NumFollowers}} {{.dlt.Tr "user.followers"}}
 								</a>
 								-
 								<a href="{{.Owner.HomeLink}}/following">
-									{{.Owner.NumFollowing}} {{.i18n.Tr "user.following"}}
+									{{.Owner.NumFollowing}} {{.dlt.Tr "user.following"}}
 								</a>
 							</li>
 							{{/*
 							<li>
 								<i class="octicon octicon-star"></i>
 								<a href="{{.Owner.HomeLink}}/stars">
-									{{.Owner.NumStars}} {{.i18n.Tr "user.starred"}}
+									{{.Owner.NumStars}} {{.dlt.Tr "user.starred"}}
 								</a>
 							</li>
 							*/}}
@@ -71,9 +71,9 @@
 							{{if and .IsSigned (ne .SignedUserName .Owner.Name)}}
 							<li class="follow">
 								{{if .SignedUser.IsFollowing .Owner.ID}}
-								<a class="ui basic red button" href="{{.Link}}/action/unfollow?redirect_to={{$.Link}}"><i class="octicon octicon-person"></i> {{.i18n.Tr "user.unfollow"}}</a>
+								<a class="ui basic red button" href="{{.Link}}/action/unfollow?redirect_to={{$.Link}}"><i class="octicon octicon-person"></i> {{.dlt.Tr "user.unfollow"}}</a>
 								{{else}}
-								<a class="ui basic green button" href="{{.Link}}/action/follow?redirect_to={{$.Link}}"><i class="octicon octicon-person"></i> {{.i18n.Tr "user.follow"}}</a>
+								<a class="ui basic green button" href="{{.Link}}/action/follow?redirect_to={{$.Link}}"><i class="octicon octicon-person"></i> {{.dlt.Tr "user.follow"}}</a>
 								{{end}}
 							</li>
 							{{end}}
@@ -84,13 +84,13 @@
 			<div class="ui eleven wide column">
 				<div class="ui secondary stackable pointing menu">
 					<a class='{{if and (ne .TabName "activity") (ne .TabName "stars")}}active{{end}} item' href="{{.Owner.HomeLink}}">
-						<i class="octicon octicon-repo"></i> {{.i18n.Tr "user.repositories"}}
+						<i class="octicon octicon-repo"></i> {{.dlt.Tr "user.repositories"}}
 					</a>
 					<a class='{{if eq .TabName "activity"}}active{{end}} item' href="{{.Owner.HomeLink}}?tab=activity">
-						<i class="octicon octicon-rss"></i> {{.i18n.Tr "user.activity"}}
+						<i class="octicon octicon-rss"></i> {{.dlt.Tr "user.activity"}}
 					</a>
 					<a class='{{if eq .TabName "stars"}}active{{end}} item' href="{{.Owner.HomeLink}}?tab=stars">
-						<i class="octicon octicon-star"></i> {{.i18n.Tr "user.starred"}}
+						<i class="octicon octicon-star"></i> {{.dlt.Tr "user.starred"}}
 					</a>
 				</div>
 
@@ -99,7 +99,7 @@
 						<div id="user-heatmap" style="padding-right: 40px">
 							<activity-heatmap :locale="locale" :suburl="suburl" :user="heatmapUser">
 								<div slot="loading">
-									<div class="ui active centered inline indeterminate text loader" id="loading-heatmap">{{.i18n.Tr "user.heatmap.loading"}}</div>
+									<div class="ui active centered inline indeterminate text loader" id="loading-heatmap">{{.dlt.Tr "user.heatmap.loading"}}</div>
 								</div>
 							</activity-heatmap>
 						</div>

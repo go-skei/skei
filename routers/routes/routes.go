@@ -14,6 +14,7 @@ import (
 	"code.gitea.io/gitea/models"
 	"code.gitea.io/gitea/modules/auth"
 	"code.gitea.io/gitea/modules/context"
+	"code.gitea.io/gitea/modules/detaillevel"
 	"code.gitea.io/gitea/modules/gzip"
 	"code.gitea.io/gitea/modules/lfs"
 	"code.gitea.io/gitea/modules/log"
@@ -108,6 +109,7 @@ func NewMacaron() *macaron.Macaron {
 		DefaultLang: "en-US",
 		Redirect:    true,
 	}))
+
 	m.Use(cache.Cacher(cache.Options{
 		Adapter:       setting.CacheService.Adapter,
 		AdapterConfig: setting.CacheService.Conn,
@@ -136,6 +138,10 @@ func NewMacaron() *macaron.Macaron {
 		DisableDebug: !setting.EnablePprof,
 	}))
 	m.Use(context.Contexter())
+
+	// Has to come after context.Contexter and i18n.I18n.
+	m.Use(detaillevel.TranslatorMiddleware())
+
 	m.SetAutoHead(true)
 	return m
 }
@@ -244,6 +250,7 @@ func RegisterRoutes(m *macaron.Macaron) {
 			m.Post("/email/delete", userSetting.DeleteEmail)
 			m.Post("/delete", userSetting.DeleteAccount)
 			m.Post("/theme", bindIgnErr(auth.UpdateThemeForm{}), userSetting.UpdateUIThemePost)
+			m.Post("/detail_level", bindIgnErr(auth.UpdateDetailLevelForm{}), userSetting.UpdateUIDetailLevelPost)
 		})
 		m.Group("/security", func() {
 			m.Get("", userSetting.Security)
@@ -294,6 +301,7 @@ func RegisterRoutes(m *macaron.Macaron) {
 	}, reqSignIn, func(ctx *context.Context) {
 		ctx.Data["PageIsUserSettings"] = true
 		ctx.Data["AllThemes"] = setting.UI.Themes
+		ctx.Data["AllDetailLevels"] = setting.UI.DetailLevels
 	})
 
 	m.Group("/user", func() {

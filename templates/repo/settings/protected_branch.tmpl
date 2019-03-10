@@ -5,7 +5,7 @@
 	<div class="ui container">
 		{{template "base/alert" .}}
 		<h4 class="ui top attached header">
-			{{.i18n.Tr "repo.settings.branch_protection" .Branch.BranchName | Str2html}}
+			{{.dlt.Tr "repo.settings.branch_protection" .Branch.BranchName | Str2html}}
 		</h4>
 		<div class="ui attached segment branch-protection">
 			<form class="ui form" action="{{.Link}}" method="post">
@@ -13,24 +13,24 @@
 				<div class="inline field">
 					<div class="ui checkbox">
 						<input class="enable-protection" name="protected" type="checkbox" data-target="#protection_box" {{if .Branch.IsProtected}}checked{{end}}>
-						<label>{{.i18n.Tr "repo.settings.protect_this_branch"}}</label>
-						<p class="help">{{.i18n.Tr "repo.settings.protect_this_branch_desc"}}</p>
+						<label>{{.dlt.Tr "repo.settings.protect_this_branch"}}</label>
+						<p class="help">{{.dlt.Tr "repo.settings.protect_this_branch_desc"}}</p>
 					</div>
 				</div>
 				<div id="protection_box" class="fields {{if not .Branch.IsProtected}}disabled{{end}}">
 					<div class="field">
 						<div class="ui checkbox">
 							<input class="enable-whitelist" name="enable_whitelist" type="checkbox" data-target="#whitelist_box" {{if .Branch.EnableWhitelist}}checked{{end}}>
-							<label>{{.i18n.Tr "repo.settings.protect_whitelist_committers"}}</label>
-							<p class="help">{{.i18n.Tr "repo.settings.protect_whitelist_committers_desc"}}</p>
+							<label>{{.dlt.Tr "repo.settings.protect_whitelist_committers"}}</label>
+							<p class="help">{{.dlt.Tr "repo.settings.protect_whitelist_committers_desc"}}</p>
 						</div>
 					</div>
 					<div id="whitelist_box" class="fields {{if not .Branch.EnableWhitelist}}disabled{{end}}">
 						<div class="whitelist field">
-							<label>{{.i18n.Tr "repo.settings.protect_whitelist_users"}}</label>
+							<label>{{.dlt.Tr "repo.settings.protect_whitelist_users"}}</label>
 							<div class="ui multiple search selection dropdown">
 								<input type="hidden" name="whitelist_users" value="{{.whitelist_users}}">
-								<div class="default text">{{.i18n.Tr "repo.settings.protect_whitelist_search_users"}}</div>
+								<div class="default text">{{.dlt.Tr "repo.settings.protect_whitelist_search_users"}}</div>
 								<div class="menu">
 									{{range .Users}}
 										<div class="item" data-value="{{.ID}}">
@@ -44,10 +44,10 @@
 						{{if .Owner.IsOrganization}}
 							<br>
 							<div class="whitelist field">
-								<label>{{.i18n.Tr "repo.settings.protect_whitelist_teams"}}</label>
+								<label>{{.dlt.Tr "repo.settings.protect_whitelist_teams"}}</label>
 								<div class="ui multiple search selection dropdown">
 									<input type="hidden" name="whitelist_teams" value="{{.whitelist_teams}}">
-									<div class="default text">{{.i18n.Tr "repo.settings.protect_whitelist_search_teams"}}</div>
+									<div class="default text">{{.dlt.Tr "repo.settings.protect_whitelist_search_teams"}}</div>
 									<div class="menu">
 										{{range .Teams}}
 											<div class="item" data-value="{{.ID}}">
@@ -64,16 +64,16 @@
 					<div class="field">
 						<div class="ui checkbox">
 							<input class="enable-whitelist" name="enable_merge_whitelist" type="checkbox" data-target="#merge_whitelist_box" {{if .Branch.EnableMergeWhitelist}}checked{{end}}>
-							<label>{{.i18n.Tr "repo.settings.protect_merge_whitelist_committers"}}</label>
-							<p class="help">{{.i18n.Tr "repo.settings.protect_merge_whitelist_committers_desc"}}</p>
+							<label>{{.dlt.Tr "repo.settings.protect_merge_whitelist_committers"}}</label>
+							<p class="help">{{.dlt.Tr "repo.settings.protect_merge_whitelist_committers_desc"}}</p>
 						</div>
 					</div>
 					<div id="merge_whitelist_box" class="fields {{if not .Branch.EnableMergeWhitelist}}disabled{{end}}">
 						<div class="whitelist field">
-							<label>{{.i18n.Tr "repo.settings.protect_merge_whitelist_users"}}</label>
+							<label>{{.dlt.Tr "repo.settings.protect_merge_whitelist_users"}}</label>
 							<div class="ui multiple search selection dropdown">
 								<input type="hidden" name="merge_whitelist_users" value="{{.merge_whitelist_users}}">
-								<div class="default text">{{.i18n.Tr "repo.settings.protect_whitelist_search_users"}}</div>
+								<div class="default text">{{.dlt.Tr "repo.settings.protect_whitelist_search_users"}}</div>
 								<div class="menu">
 								{{range .Users}}
 									<div class="item" data-value="{{.ID}}">
@@ -87,10 +87,10 @@
 					{{if .Owner.IsOrganization}}
 						<br>
 						<div class="whitelist field">
-							<label>{{.i18n.Tr "repo.settings.protect_merge_whitelist_teams"}}</label>
+							<label>{{.dlt.Tr "repo.settings.protect_merge_whitelist_teams"}}</label>
 							<div class="ui multiple search selection dropdown">
 								<input type="hidden" name="merge_whitelist_teams" value="{{.merge_whitelist_teams}}">
-								<div class="default text">{{.i18n.Tr "repo.settings.protect_whitelist_search_teams"}}</div>
+								<div class="default text">{{.dlt.Tr "repo.settings.protect_whitelist_search_teams"}}</div>
 								<div class="menu">
 								{{range .Teams}}
 									<div class="item" data-value="{{.ID}}">
@@ -105,16 +105,16 @@
 					</div>
 
 					<div class="field">
-						<label for="required-approvals">{{.i18n.Tr "repo.settings.protect_required_approvals"}}</label>
+						<label for="required-approvals">{{.dlt.Tr "repo.settings.protect_required_approvals"}}</label>
 						<input name="required_approvals" id="required-approvals" type="number" value="{{.Branch.RequiredApprovals}}">
-						<p class="help">{{.i18n.Tr "repo.settings.protect_required_approvals_desc"}}</p>
+						<p class="help">{{.dlt.Tr "repo.settings.protect_required_approvals_desc"}}</p>
 					</div>
 					<div class="fields">
 						<div class="whitelist field">
-							<label>{{.i18n.Tr "repo.settings.protect_approvals_whitelist_users"}}</label>
+							<label>{{.dlt.Tr "repo.settings.protect_approvals_whitelist_users"}}</label>
 							<div class="ui multiple search selection dropdown">
 								<input type="hidden" name="approvals_whitelist_users" value="{{.approvals_whitelist_users}}">
-								<div class="default text">{{.i18n.Tr "repo.settings.protect_whitelist_search_users"}}</div>
+								<div class="default text">{{.dlt.Tr "repo.settings.protect_whitelist_search_users"}}</div>
 								<div class="menu">
 								{{range .Users}}
 									<div class="item" data-value="{{.ID}}">
@@ -128,10 +128,10 @@
 					{{if .Owner.IsOrganization}}
 						<br>
 						<div class="whitelist field">
-							<label>{{.i18n.Tr "repo.settings.protect_approvals_whitelist_teams"}}</label>
+							<label>{{.dlt.Tr "repo.settings.protect_approvals_whitelist_teams"}}</label>
 							<div class="ui multiple search selection dropdown">
 								<input type="hidden" name="approvals_whitelist_teams" value="{{.approvals_whitelist_teams}}">
-								<div class="default text">{{.i18n.Tr "repo.settings.protect_whitelist_search_teams"}}</div>
+								<div class="default text">{{.dlt.Tr "repo.settings.protect_whitelist_search_teams"}}</div>
 								<div class="menu">
 								{{range .Teams}}
 									<div class="item" data-value="{{.ID}}">
@@ -149,7 +149,7 @@
 				<div class="ui divider"></div>
 
 				<div class="field">
-					<button class="ui green button">{{$.i18n.Tr "repo.settings.update_settings"}}</button>
+					<button class="ui green button">{{$.dlt.Tr "repo.settings.update_settings"}}</button>
 				</div>
 			</form>
 		</div>

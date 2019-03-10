@@ -307,7 +307,9 @@ var (
 		MaxDisplayFileSize  int64
 		ShowUserEmail       bool
 		DefaultTheme        string
+		DefaultDetailLevel  string
 		Themes              []string
+		DetailLevels        []string
 
 		Admin struct {
 			UserPagingNum   int
@@ -334,7 +336,9 @@ var (
 		ThemeColorMetaTag:   `#6cc644`,
 		MaxDisplayFileSize:  8388608,
 		DefaultTheme:        `gitea`,
+		DefaultDetailLevel:  `simplified`,
 		Themes:              []string{`gitea`, `arc-green`},
+		DetailLevels:        []string{`full`, `simplified`},
 		Admin: struct {
 			UserPagingNum   int
 			RepoPagingNum   int

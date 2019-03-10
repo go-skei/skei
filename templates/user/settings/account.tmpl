@@ -4,7 +4,7 @@
 	<div class="ui container">
 		{{template "base/alert" .}}
 		<h4 class="ui top attached header">
-			{{.i18n.Tr "settings.password"}}
+			{{.dlt.Tr "settings.password"}}
 		</h4>
 		<div class="ui attached segment">
 			{{if or (.SignedUser.IsLocal) (.SignedUser.IsOAuth2)}}
@@ -12,45 +12,45 @@
 				{{.CsrfTokenHtml}}
 				{{if .SignedUser.IsPasswordSet}}
 				<div class="required field {{if .Err_OldPassword}}error{{end}}">
-					<label for="old_password">{{.i18n.Tr "settings.old_password"}}</label>
+					<label for="old_password">{{.dlt.Tr "settings.old_password"}}</label>
 					<input id="old_password" name="old_password" type="password" autocomplete="off" autofocus required>
 				</div>
 				{{end}}
 				<div class="required field {{if .Err_Password}}error{{end}}">
-					<label for="password">{{.i18n.Tr "settings.new_password"}}</label>
+					<label for="password">{{.dlt.Tr "settings.new_password"}}</label>
 					<input id="password" name="password" type="password" autocomplete="off" required>
 				</div>
 				<div class="required field {{if .Err_Password}}error{{end}}">
-					<label for="retype">{{.i18n.Tr "settings.retype_new_password"}}</label>
+					<label for="retype">{{.dlt.Tr "settings.retype_new_password"}}</label>
 					<input id="retype" name="retype" type="password" autocomplete="off" required>
 				</div>
 
 				<div class="field">
-					<button class="ui green button">{{$.i18n.Tr "settings.change_password"}}</button>
-					<a href="{{AppSubUrl}}/user/forgot_password?email={{.Email}}">{{.i18n.Tr "auth.forgot_password"}}</a>
+					<button class="ui green button">{{$.dlt.Tr "settings.change_password"}}</button>
+					<a href="{{AppSubUrl}}/user/forgot_password?email={{.Email}}">{{.dlt.Tr "auth.forgot_password"}}</a>
 				</div>
 			</form>
 			{{else}}
 			<div class="ui info message">
-				<p class="text left">{{$.i18n.Tr "settings.password_change_disabled"}}</p>
+				<p class="text left">{{$.dlt.Tr "settings.password_change_disabled"}}</p>
 			</div>
 			{{end}}
 		</div>
 
 		<h4 class="ui top attached header">
-			{{.i18n.Tr "settings.manage_emails"}}
+			{{.dlt.Tr "settings.manage_emails"}}
 		</h4>
 		<div class="ui attached segment">
 			<div class="ui email list">
 				<div class="item">
-					{{.i18n.Tr "settings.email_desc"}}
+					{{.dlt.Tr "settings.email_desc"}}
 				</div>
 				{{range .Emails}}
 					<div class="item">
 						{{if not .IsPrimary}}
 							<div class="right floated content">
 								<button class="ui red tiny button delete-button" id="delete-email" data-url="{{AppSubUrl}}/user/settings/account/email/delete" data-id="{{.ID}}">
-									{{$.i18n.Tr "settings.delete_email"}}
+									{{$.dlt.Tr "settings.delete_email"}}
 								</button>
 							</div>
 							{{if .IsActivated}}
@@ -59,14 +59,14 @@
 										{{$.CsrfTokenHtml}}
 										<input name="_method" type="hidden" value="PRIMARY">
 										<input name="id" type="hidden" value="{{.ID}}">
-										<button class="ui blue tiny button">{{$.i18n.Tr "settings.primary_email"}}</button>
+										<button class="ui blue tiny button">{{$.dlt.Tr "settings.primary_email"}}</button>
 									</form>
 								</div>
 							{{end}}
 						{{end}}
 						<div class="content">
 							<strong>{{.Email}}</strong>
-							{{if .IsPrimary}}<span class="text red">{{$.i18n.Tr "settings.primary"}}</span>{{end}}
+							{{if .IsPrimary}}<span class="text red">{{$.dlt.Tr "settings.primary"}}</span>{{end}}
 						</div>
 					</div>
 				{{end}}
@@ -76,28 +76,28 @@
 			<form class="ui form" action="{{AppSubUrl}}/user/settings/account/email" method="post">
 				{{.CsrfTokenHtml}}
 				<div class="required field {{if .Err_Email}}error{{end}}">
-					<label for="email">{{.i18n.Tr "settings.add_new_email"}}</label>
+					<label for="email">{{.dlt.Tr "settings.add_new_email"}}</label>
 					<input id="email" name="email" type="email" required>
 				</div>
 				<button class="ui green button">
-					{{.i18n.Tr "settings.add_email"}}
+					{{.dlt.Tr "settings.add_email"}}
 				</button>
 			</form>
 		</div>
 
 		<h4 class="ui top attached header">
-			{{.i18n.Tr "settings.manage_themes"}}
+			{{.dlt.Tr "settings.manage_themes"}}
 		</h4>
 		<div class="ui attached segment">
 			<div class="ui email list">
 				<div class="item">
-					{{.i18n.Tr "settings.theme_desc"}}
+					{{.dlt.Tr "settings.theme_desc"}}
 				</div>
 
 			<form class="ui form" action="{{.Link}}/theme" method="post">
 				{{.CsrfTokenHtml}}
 					<div class="field">
-						<label for="ui">{{.i18n.Tr "settings.ui"}}</label>
+						<label for="ui">{{.dlt.Tr "settings.ui"}}</label>
 						<div class="ui selection dropdown" id="ui">
 							<input name="theme" type="hidden" value="{{.SignedUser.Theme}}">
 							<i class="dropdown icon"></i>
@@ -118,30 +118,68 @@
 					</div>
 
 				<div class="field">
-					<button class="ui green button">{{$.i18n.Tr "settings.update_theme"}}</button>
+					<button class="ui green button">{{$.dlt.Tr "settings.update_theme"}}</button>
+				</div>
+			</form>
+			</div>
+		</div>
+		<h4 class="ui top attached header">
+			{{.dlt.Tr "settings.manage_detail_level"}}
+		</h4>
+		<div class="ui attached segment">
+			<div class="ui email list">
+				<div class="item">
+					{{.dlt.Tr "settings.detail_level_desc"}}
+				</div>
+
+			<form class="ui form" action="{{.Link}}/detail_level" method="post">
+				{{.CsrfTokenHtml}}
+					<div class="field">
+						<label for="ui">{{.dlt.Tr "settings.detail_level"}}</label>
+						<div class="ui selection dropdown" id="ui">
+							<input name="detail_level" type="hidden" value="{{.SignedUser.DetailLevel}}">
+							<i class="dropdown icon"></i>
+							<div class="text">
+								{{range $i,$a := .AllDetailLevels}}
+								    {{if eq $.SignedUser.DetailLevel $a}}{{$a}}{{end}}
+								{{end}}
+							</div>
+
+							<div class="menu">
+							{{range $i,$a := .AllDetailLevels}}
+								<div class="item{{if eq $.SignedUser.DetailLevel $a}} active selected{{end}}" data-value="{{$a}}">
+									{{$a}}
+								</div>
+							{{end}}
+							</div>
+						</div>
+					</div>
+
+				<div class="field">
+					<button class="ui green button">{{$.dlt.Tr "settings.update_detail_level"}}</button>
 				</div>
 			</form>
 			</div>
 		</div>
 		<h4 class="ui top attached warning header">
-			{{.i18n.Tr "settings.delete_account"}}
+			{{.dlt.Tr "settings.delete_account"}}
 		</h4>
 		<div class="ui attached warning segment">
 			<div class="ui red message">
-				<p class="text left"><i class="octicon octicon-alert"></i> {{.i18n.Tr "settings.delete_prompt" | Str2html}}</p>
+				<p class="text left"><i class="octicon octicon-alert"></i> {{.dlt.Tr "settings.delete_prompt" | Str2html}}</p>
 			</div>
 			<form class="ui form ignore-dirty" id="delete-form" action="{{AppSubUrl}}/user/settings/account/delete" method="post">
 				{{.CsrfTokenHtml}}
 				<input class="fake" type="password">
 				<div class="required field {{if .Err_Password}}error{{end}}">
-					<label for="password-confirmation">{{.i18n.Tr "password"}}</label>
+					<label for="password-confirmation">{{.dlt.Tr "password"}}</label>
 					<input id="password-confirmation" name="password" type="password" required>
 				</div>
 				<div class="field">
 					<div class="ui red button delete-button" id="delete-account" data-type="form" data-form="#delete-form">
-						{{.i18n.Tr "settings.confirm_delete_account"}}
+						{{.dlt.Tr "settings.confirm_delete_account"}}
 					</div>
-					<a href="{{AppSubUrl}}/user/forgot_password?email={{.Email}}">{{.i18n.Tr "auth.forgot_password"}}</a>
+					<a href="{{AppSubUrl}}/user/forgot_password?email={{.Email}}">{{.dlt.Tr "auth.forgot_password"}}</a>
 				</div>
 			</form>
 		</div>
@@ -151,10 +189,10 @@
 <div class="ui small basic delete modal" id="delete-email">
 	<div class="ui icon header">
 		<i class="trash icon"></i>
-		{{.i18n.Tr "settings.email_deletion"}}
+		{{.dlt.Tr "settings.email_deletion"}}
 	</div>
 	<div class="content">
-		<p>{{.i18n.Tr "settings.email_deletion_desc"}}</p>
+		<p>{{.dlt.Tr "settings.email_deletion_desc"}}</p>
 	</div>
 	{{template "base/delete_modal_actions" .}}
 </div>
@@ -162,10 +200,10 @@
 <div class="ui small basic delete modal" id="delete-account">
 	<div class="ui icon header">
 		<i class="trash icon"></i>
-		{{.i18n.Tr "settings.delete_account_title"}}
+		{{.dlt.Tr "settings.delete_account_title"}}
 	</div>
 	<div class="content">
-		<p>{{.i18n.Tr "settings.delete_account_desc"}}</p>
+		<p>{{.dlt.Tr "settings.delete_account_desc"}}</p>
 	</div>
 	{{template "base/delete_modal_actions" .}}
 </div>

@@ -5,28 +5,28 @@
 				{{if .PageIsPullFiles}}
 					{{template "repo/diff/whitespace_dropdown" .}}
 				{{else}}
-					<a class="ui tiny basic toggle button" href="?style={{if .IsSplitStyle}}unified{{else}}split{{end}}">{{ if .IsSplitStyle }}{{.i18n.Tr "repo.diff.show_unified_view"}}{{else}}{{.i18n.Tr "repo.diff.show_split_view"}}{{end}}</a>
+					<a class="ui tiny basic toggle button" href="?style={{if .IsSplitStyle}}unified{{else}}split{{end}}">{{ if .IsSplitStyle }}{{.dlt.Tr "repo.diff.show_unified_view"}}{{else}}{{.dlt.Tr "repo.diff.show_split_view"}}{{end}}</a>
 				{{end}}
-				<a class="ui tiny basic toggle button" data-target="#diff-files">{{.i18n.Tr "repo.diff.show_diff_stats"}}</a>
+				<a class="ui tiny basic toggle button" data-target="#diff-files">{{.dlt.Tr "repo.diff.show_diff_stats"}}</a>
 				{{if and .PageIsPullFiles $.SignedUserID (not .IsArchived)}}
 					{{template "repo/diff/new_review" .}}
 				{{end}}
 			</div>
 		</div>
 	</div>
-	<h4>{{.i18n.Tr "repo.diff.data_not_available"}}</h4>
+	<h4>{{.dlt.Tr "repo.diff.data_not_available"}}</h4>
 {{else}}
 	<div class="diff-detail-box diff-box ui sticky">
 		<div>
 			<i class="fa fa-retweet"></i>
-			{{.i18n.Tr "repo.diff.stats_desc" .Diff.NumFiles .Diff.TotalAddition .Diff.TotalDeletion | Str2html}}
+			{{.dlt.Tr "repo.diff.stats_desc" .Diff.NumFiles .Diff.TotalAddition .Diff.TotalDeletion | Str2html}}
 			<div class="ui right">
 				{{if .PageIsPullFiles}}
 					{{template "repo/diff/whitespace_dropdown" .}}
 				{{else}}
-					<a class="ui tiny basic toggle button" href="?style={{if .IsSplitStyle}}unified{{else}}split{{end}}">{{ if .IsSplitStyle }}{{.i18n.Tr "repo.diff.show_unified_view"}}{{else}}{{.i18n.Tr "repo.diff.show_split_view"}}{{end}}</a>
+					<a class="ui tiny basic toggle button" href="?style={{if .IsSplitStyle}}unified{{else}}split{{end}}">{{ if .IsSplitStyle }}{{.dlt.Tr "repo.diff.show_unified_view"}}{{else}}{{.dlt.Tr "repo.diff.show_split_view"}}{{end}}</a>
 				{{end}}
-				<a class="ui tiny basic toggle button" data-target="#diff-files">{{.i18n.Tr "repo.diff.show_diff_stats"}}</a>
+				<a class="ui tiny basic toggle button" data-target="#diff-files">{{.dlt.Tr "repo.diff.show_diff_stats"}}</a>
 				{{if and .PageIsPullFiles $.SignedUserID (not .IsArchived)}}
 					{{template "repo/diff/new_review" .}}
 				{{end}}
@@ -44,7 +44,7 @@
 							</span>
 							<span class="del" data-line="{{.Deletion}}">{{.Deletion}}</span>
 						{{else}}
-							<span>{{$.i18n.Tr "repo.diff.bin"}}</span>
+							<span>{{$.dlt.Tr "repo.diff.bin"}}</span>
 						{{end}}
 					</div>
 					<!-- todo finish all file status, now modify, add, delete and rename -->
@@ -70,12 +70,12 @@
 						{{end}}
 					</div>
 					<span class="file">{{$file.Name}}</span>
-					<div>{{$.i18n.Tr "repo.diff.file_suppressed"}}</div>
+					<div>{{$.dlt.Tr "repo.diff.file_suppressed"}}</div>
 					{{if not $file.IsSubmodule}}
 						{{if $file.IsDeleted}}
-							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.BeforeSourcePath}}/{{EscapePound .Name}}">{{$.i18n.Tr "repo.diff.view_file"}}</a>
+							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.BeforeSourcePath}}/{{EscapePound .Name}}">{{$.dlt.Tr "repo.diff.view_file"}}</a>
 						{{else}}
-							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.SourcePath}}/{{EscapePound .Name}}">{{$.i18n.Tr "repo.diff.view_file"}}</a>
+							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.SourcePath}}/{{EscapePound .Name}}">{{$.dlt.Tr "repo.diff.view_file"}}</a>
 						{{end}}
 					{{end}}
 				</h4>
@@ -85,7 +85,7 @@
 				<h4 class="ui top attached normal header">
 					<div class="diff-counter count">
 						{{if $file.IsBin}}
-							{{$.i18n.Tr "repo.diff.bin"}}
+							{{$.dlt.Tr "repo.diff.bin"}}
 						{{else if not $file.IsRenamed}}
 							<span class="add" data-line="{{.Addition}}">+ {{.Addition}}</span>
 							<span class="bar">
@@ -95,12 +95,12 @@
 							<span class="del" data-line="{{.Deletion}}">- {{.Deletion}}</span>
 						{{end}}
 					</div>
-					<span class="file">{{if $file.IsRenamed}}{{$file.OldName}} &rarr; {{end}}{{$file.Name}}{{if .IsLFSFile}} ({{$.i18n.Tr "repo.stored_lfs"}}){{end}}</span>
+					<span class="file">{{if $file.IsRenamed}}{{$file.OldName}} &rarr; {{end}}{{$file.Name}}{{if .IsLFSFile}} ({{$.dlt.Tr "repo.stored_lfs"}}){{end}}</span>
 					{{if not $file.IsSubmodule}}
 						{{if $file.IsDeleted}}
-							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.BeforeSourcePath}}/{{EscapePound .Name}}">{{$.i18n.Tr "repo.diff.view_file"}}</a>
+							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.BeforeSourcePath}}/{{EscapePound .Name}}">{{$.dlt.Tr "repo.diff.view_file"}}</a>
 						{{else}}
-							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.SourcePath}}/{{EscapePound .Name}}">{{$.i18n.Tr "repo.diff.view_file"}}</a>
+							<a class="ui basic grey tiny button" rel="nofollow" href="{{EscapePound $.SourcePath}}/{{EscapePound .Name}}">{{$.dlt.Tr "repo.diff.view_file"}}</a>
 						{{end}}
 					{{end}}
 				</h4>
@@ -189,7 +189,7 @@
 	{{if .Diff.IsIncomplete}}
 		<div class="diff-file-box diff-box file-content">
 			<h4 class="ui top attached normal header">
-				{{$.i18n.Tr "repo.diff.too_many_files"}}
+				{{$.dlt.Tr "repo.diff.too_many_files"}}
 			</h4>
 		</div>
 	{{end}}
@@ -201,18 +201,18 @@
         <div class="hide" id="edit-content-form">
             <div class="ui comment form">
                 <div class="ui top attached tabular menu">
-                    <a class="active write item">{{$.i18n.Tr "write"}}</a>
-                    <a class="preview item" data-url="{{AppSubUrl}}/api/v1/markdown" data-context="{{$.RepoLink}}">{{$.i18n.Tr "preview"}}</a>
+                    <a class="active write item">{{$.dlt.Tr "write"}}</a>
+                    <a class="preview item" data-url="{{AppSubUrl}}/api/v1/markdown" data-context="{{$.RepoLink}}">{{$.dlt.Tr "preview"}}</a>
                 </div>
                 <div class="ui bottom attached active write tab segment">
                     <textarea tabindex="1" name="content"></textarea>
                 </div>
                 <div class="ui bottom attached tab preview segment markdown">
-                {{$.i18n.Tr "loading"}}
+                {{$.dlt.Tr "loading"}}
                 </div>
                 <div class="text right edit buttons">
-                    <div class="ui basic blue cancel button" tabindex="3">{{.i18n.Tr "repo.issues.cancel"}}</div>
-                    <div class="ui green save button" tabindex="2">{{.i18n.Tr "repo.issues.save"}}</div>
+                    <div class="ui basic blue cancel button" tabindex="3">{{.dlt.Tr "repo.issues.cancel"}}</div>
+                    <div class="ui green save button" tabindex="2">{{.dlt.Tr "repo.issues.save"}}</div>
                 </div>
             </div>
         </div>
