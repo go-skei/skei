@@ -1,6 +1,6 @@
 // Copyright 2019 Katie Jones. All rights reserved.
-// This source code is licensed under the GNU GPL version 2 or (at your option)
-// 3. Details on licensing can be found in the LICENSE file.
+// This source code is licensed under the GNU GPL version 3. Details on
+// licensing can be found in the LICENSE file.
 
 // Package detaillevel provides customization functionality based on the detail
 // level of the current user.
