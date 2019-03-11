@@ -10,7 +10,7 @@ import (
 	"os"
 	"strings"
 
-	"code.gitea.io/gitea/modules/log"
+	"code.skei.dev/skei/modules/log"
 
 	"github.com/Unknwon/com"
 	"github.com/go-xorm/builder"

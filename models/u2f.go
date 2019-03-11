@@ -5,8 +5,8 @@
 package models
 
 import (
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/util"
 
 	"github.com/tstranex/u2f"
 )

@@ -5,12 +5,12 @@
 package setting
 
 import (
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth"
-	"code.gitea.io/gitea/modules/auth/openid"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth"
+	"code.skei.dev/skei/modules/auth/openid"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // OpenIDPost response for change user's openid

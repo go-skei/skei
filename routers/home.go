@@ -8,13 +8,13 @@ import (
 	"bytes"
 	"strings"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/search"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/modules/util"
-	"code.gitea.io/gitea/routers/user"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/search"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/modules/util"
+	"code.skei.dev/skei/routers/user"
 
 	"github.com/Unknwon/paginater"
 )

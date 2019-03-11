@@ -8,7 +8,7 @@ package cmd
 import (
 	"fmt"
 
-	"code.gitea.io/gitea/modules/generate"
+	"code.skei.dev/skei/modules/generate"
 
 	"github.com/urfave/cli"
 )

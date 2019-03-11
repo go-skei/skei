@@ -8,7 +8,7 @@ import (
 	"path"
 	"strings"
 
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 )
 
 var (

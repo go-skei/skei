@@ -22,8 +22,8 @@ menu:
 你需要获取Gitea的源码，最方便的方式是使用 go 命令。执行以下命令：
 
 ```
-go get -d -u code.gitea.io/gitea
-cd $GOPATH/src/code.gitea.io/gitea
+go get -d -u code.skei.dev/skei
+cd $GOPATH/src/code.skei.dev/skei
 ```
 
 然后你可以选择编译和安装的版本，当前你有多个选择。如果你想编译 `master` 版本，你可以直接跳到 [编译](#build) 部分，这是我们的开发分支，虽然也很稳定但不建议您在正式产品中使用。

@@ -7,9 +7,9 @@ package user
 import (
 	api "code.gitea.io/sdk/gitea"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // getWatchedRepos returns the repos that the user with the specified userID is

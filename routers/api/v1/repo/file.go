@@ -6,9 +6,9 @@
 package repo
 
 import (
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/routers/repo"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/routers/repo"
 
 	"code.gitea.io/git"
 )

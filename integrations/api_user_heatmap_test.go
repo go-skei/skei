@@ -5,7 +5,7 @@
 package integrations
 
 import (
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 	"fmt"
 	"github.com/stretchr/testify/assert"
 	"net/http"

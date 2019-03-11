@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/stretchr/testify/assert"

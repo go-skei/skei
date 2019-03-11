@@ -8,10 +8,10 @@ import (
 	"net/http"
 	"testing"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/test"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/test"
 
 	"github.com/stretchr/testify/assert"
 )

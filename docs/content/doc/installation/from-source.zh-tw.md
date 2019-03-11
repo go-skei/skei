@@ -22,8 +22,8 @@ menu:
 首先您必須先下載原始碼，最簡單的方式就是透過 Go 指令下載，請透過底下指令下載原始碼並且切換到工作目錄。
 
 ```
-go get -d -u code.gitea.io/gitea
-cd $GOPATH/src/code.gitea.io/gitea
+go get -d -u code.skei.dev/skei
+cd $GOPATH/src/code.skei.dev/skei
 ```
 
 現在該決定您要編譯或安裝的 Gitea 版本，您有很多可以選擇。如果您想編譯 `master` 版本，你可以直接跳到[編譯章節](#build)，這是我們開發分支，雖然很穩定，但是不建議用在正式環境。

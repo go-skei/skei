@@ -20,9 +20,9 @@ import (
 	gouuid "github.com/satori/go.uuid"
 	ini "gopkg.in/ini.v1"
 
-	"code.gitea.io/gitea/modules/generate"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/generate"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 )
 
 const minDBVersion = 4

@@ -7,8 +7,8 @@ package context
 import (
 	"strings"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/setting"
 	macaron "gopkg.in/macaron.v1"
 )
 

@@ -16,8 +16,8 @@ import (
 	"time"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/util"
 
 	"github.com/go-xorm/xorm"
 	"github.com/keybase/go-crypto/openpgp"

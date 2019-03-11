@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/util"
 
 	"github.com/go-xorm/builder"
 )

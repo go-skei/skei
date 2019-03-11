@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 	api "code.gitea.io/sdk/gitea"
 )
 

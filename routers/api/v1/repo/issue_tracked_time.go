@@ -5,8 +5,8 @@
 package repo
 
 import (
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
 
 	api "code.gitea.io/sdk/gitea"
 )

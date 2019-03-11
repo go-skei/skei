@@ -5,7 +5,7 @@
 package convert
 
 import (
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // ToCorrectPageSize makes sure page size is in allowed range.

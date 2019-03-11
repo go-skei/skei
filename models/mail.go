@@ -10,12 +10,12 @@ import (
 	"html/template"
 	"path"
 
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/mailer"
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/markup/markdown"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/mailer"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/markup/markdown"
+	"code.skei.dev/skei/modules/setting"
 	"gopkg.in/gomail.v2"
 	"gopkg.in/macaron.v1"
 )

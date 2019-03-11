@@ -12,4 +12,4 @@ docker:
 
 .PHONY: docker-build
 docker-build:
-	docker run -ti --rm -v $(CURDIR):/srv/app/src/code.gitea.io/gitea -w /srv/app/src/code.gitea.io/gitea -e TAGS="bindata $(TAGS)" webhippie/golang:edge make clean generate build
+	docker run -ti --rm -v $(CURDIR):/srv/app/src/code.skei.dev/skei -w /srv/app/src/code.skei.dev/skei -e TAGS="bindata $(TAGS)" webhippie/golang:edge make clean generate build

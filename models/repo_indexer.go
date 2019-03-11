@@ -10,10 +10,10 @@ import (
 	"strings"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/indexer"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/indexer"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/ethantkoenig/rupture"
 )

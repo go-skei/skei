@@ -21,10 +21,10 @@ import (
 	"strings"
 	"testing"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/routers"
-	"code.gitea.io/gitea/routers/routes"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/routers"
+	"code.skei.dev/skei/routers/routes"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/Unknwon/com"

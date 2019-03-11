@@ -1,5 +1,5 @@
 DIST := dist
-IMPORT := code.gitea.io/gitea
+IMPORT := code.skei.dev/skei
 
 GO ?= go
 SED_INPLACE := sed -i
@@ -35,7 +35,7 @@ endif
 
 LDFLAGS := -X "main.Version=$(GITEA_VERSION)" -X "main.Tags=$(TAGS)"
 
-PACKAGES ?= $(filter-out code.gitea.io/gitea/integrations,$(shell $(GO) list ./... | grep -v /vendor/))
+PACKAGES ?= $(filter-out code.skei.dev/skei/integrations,$(shell $(GO) list ./... | grep -v /vendor/))
 SOURCES ?= $(shell find . -name "*.go" -type f)
 
 TAGS ?=
@@ -244,13 +244,13 @@ integration-test-coverage: integrations.cover.test generate-ini
 	GITEA_ROOT=${CURDIR} GITEA_CONF=integrations/mysql.ini ./integrations.cover.test -test.coverprofile=integration.coverage.out
 
 integrations.test: $(SOURCES)
-	$(GO) test -c code.gitea.io/gitea/integrations -o integrations.test
+	$(GO) test -c code.skei.dev/skei/integrations -o integrations.test
 
 integrations.sqlite.test: $(SOURCES)
-	$(GO) test -c code.gitea.io/gitea/integrations -o integrations.sqlite.test -tags 'sqlite sqlite_unlock_notify'
+	$(GO) test -c code.skei.dev/skei/integrations -o integrations.sqlite.test -tags 'sqlite sqlite_unlock_notify'
 
 integrations.cover.test: $(SOURCES)
-	$(GO) test -c code.gitea.io/gitea/integrations -coverpkg $(shell echo $(PACKAGES) | tr ' ' ',') -o integrations.cover.test
+	$(GO) test -c code.skei.dev/skei/integrations -coverpkg $(shell echo $(PACKAGES) | tr ' ' ',') -o integrations.cover.test
 
 .PHONY: check
 check: test

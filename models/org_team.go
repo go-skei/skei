@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/go-xorm/xorm"
 )

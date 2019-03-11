@@ -7,10 +7,10 @@ package setting
 import (
 	"errors"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/tstranex/u2f"
 )

@@ -7,8 +7,8 @@ package private
 import (
 	"fmt"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // InitWiki initwiki via repo id

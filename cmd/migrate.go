@@ -5,10 +5,10 @@
 package cmd
 
 import (
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/models/migrations"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/models/migrations"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/urfave/cli"
 )

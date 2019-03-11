@@ -7,8 +7,8 @@ package models
 import (
 	"fmt"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/util"
 	api "code.gitea.io/sdk/gitea"
 
 	"github.com/go-xorm/builder"

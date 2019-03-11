@@ -8,10 +8,10 @@ import (
 	"path"
 	"strings"
 
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/search"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/search"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/Unknwon/paginater"
 )

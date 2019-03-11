@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // GraphItem represent one commit, or one relation in timeline

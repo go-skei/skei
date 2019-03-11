@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/Unknwon/com"
 	"github.com/go-xorm/core"

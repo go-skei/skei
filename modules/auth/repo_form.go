@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strings"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/routers/utils"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/routers/utils"
 
 	"github.com/Unknwon/com"
 	"github.com/go-macaron/binding"

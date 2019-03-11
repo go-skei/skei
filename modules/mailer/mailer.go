@@ -16,9 +16,9 @@ import (
 	"strings"
 	"time"
 
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/jaytaylor/html2text"
 	"gopkg.in/gomail.v2"

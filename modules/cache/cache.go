@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 
 	mc "github.com/go-macaron/cache"
 )

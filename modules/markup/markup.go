@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"code.gitea.io/gitea/modules/log"
+	"code.skei.dev/skei/modules/log"
 )
 
 // Init initialize regexps for markdown parsing

@@ -13,13 +13,13 @@ import (
 
 	"code.gitea.io/git"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth"
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/markup/markdown"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/markup/markdown"
+	"code.skei.dev/skei/modules/util"
 )
 
 const (

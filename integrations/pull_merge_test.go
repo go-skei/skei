@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/test"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/test"
 
 	"github.com/Unknwon/i18n"
 	"github.com/stretchr/testify/assert"

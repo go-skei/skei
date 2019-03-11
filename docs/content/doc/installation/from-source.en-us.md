@@ -25,8 +25,8 @@ First retrieve the source code. The easiest way is to use the Go tool. Use the f
 commands to fetch the source and switch into the source directory.
 
 ```
-go get -d -u code.gitea.io/gitea
-cd $GOPATH/src/code.gitea.io/gitea
+go get -d -u code.skei.dev/skei
+cd $GOPATH/src/code.skei.dev/skei
 ```
 
 Decide which version of Gitea to build and install. Currently, there are multiple options

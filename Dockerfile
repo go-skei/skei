@@ -11,8 +11,8 @@ ENV TAGS "bindata $TAGS"
 RUN apk --no-cache add build-base git
 
 #Setup repo
-COPY . ${GOPATH}/src/code.gitea.io/gitea
-WORKDIR ${GOPATH}/src/code.gitea.io/gitea
+COPY . ${GOPATH}/src/code.skei.dev/skei
+WORKDIR ${GOPATH}/src/code.skei.dev/skei
 
 #Checkout version if set
 RUN if [ -n "${GITEA_VERSION}" ]; then git checkout "${GITEA_VERSION}"; fi \
@@ -57,5 +57,5 @@ ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 
 COPY docker /
-COPY --from=build-env /go/src/code.gitea.io/gitea/gitea /app/gitea/gitea
+COPY --from=build-env /go/src/code.skei.dev/skei/gitea /app/gitea/gitea
 RUN ln -s /app/gitea/gitea /usr/local/bin/gitea

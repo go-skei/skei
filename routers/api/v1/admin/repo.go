@@ -7,9 +7,9 @@ package admin
 import (
 	api "code.gitea.io/sdk/gitea"
 
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/routers/api/v1/repo"
-	"code.gitea.io/gitea/routers/api/v1/user"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/routers/api/v1/repo"
+	"code.skei.dev/skei/routers/api/v1/user"
 )
 
 // CreateRepo api for creating a repository

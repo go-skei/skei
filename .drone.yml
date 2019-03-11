@@ -1,6 +1,6 @@
 workspace:
   base: /go
-  path: src/code.gitea.io/gitea
+  path: src/code.skei.dev/skei
 
 clone:
   git:

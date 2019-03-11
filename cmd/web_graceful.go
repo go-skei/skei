@@ -10,7 +10,7 @@ import (
 	"crypto/tls"
 	"net/http"
 
-	"code.gitea.io/gitea/modules/log"
+	"code.skei.dev/skei/modules/log"
 
 	"github.com/facebookgo/grace/gracehttp"
 )

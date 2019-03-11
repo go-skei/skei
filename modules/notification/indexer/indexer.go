@@ -5,8 +5,8 @@
 package indexer
 
 import (
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/notification/base"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/notification/base"
 )
 
 type indexerNotifier struct {

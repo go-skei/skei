@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
 )
 
 // IssueWatch sets issue watching

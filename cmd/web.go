@@ -14,11 +14,11 @@ import (
 	"os"
 	"strings"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/markup/external"
-	"code.gitea.io/gitea/modules/setting"
-	"code.gitea.io/gitea/routers"
-	"code.gitea.io/gitea/routers/routes"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/markup/external"
+	"code.skei.dev/skei/modules/setting"
+	"code.skei.dev/skei/routers"
+	"code.skei.dev/skei/routers/routes"
 
 	"github.com/Unknwon/com"
 	context2 "github.com/gorilla/context"

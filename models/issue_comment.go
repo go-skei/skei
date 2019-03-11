@@ -12,17 +12,17 @@ import (
 	"strings"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/modules/markup/markdown"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/markup/markdown"
+	"code.skei.dev/skei/modules/setting"
 	"github.com/Unknwon/com"
 	"github.com/go-xorm/builder"
 	"github.com/go-xorm/xorm"
 
 	api "code.gitea.io/sdk/gitea"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/util"
 )
 
 // CommentType defines whether a comment is just a simple comment, an action (like close) or a reference.

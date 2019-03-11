@@ -12,11 +12,11 @@ import (
 	"text/tabwriter"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth/oauth2"
-	"code.gitea.io/gitea/modules/generate"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth/oauth2"
+	"code.skei.dev/skei/modules/generate"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/urfave/cli"
 )

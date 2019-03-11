@@ -10,12 +10,12 @@ import (
 	"strings"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/notification"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/notification"
+	"code.skei.dev/skei/modules/util"
 
 	api "code.gitea.io/sdk/gitea"
 )

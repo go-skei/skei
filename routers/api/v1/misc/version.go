@@ -5,8 +5,8 @@
 package misc
 
 import (
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/setting"
 	"code.gitea.io/sdk/gitea"
 )
 

@@ -10,9 +10,9 @@ import (
 
 	"github.com/Unknwon/com"
 
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/markup"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/markup"
+	"code.skei.dev/skei/modules/setting"
 )
 
 func (issue *Issue) mailSubject() string {

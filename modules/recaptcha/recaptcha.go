@@ -12,7 +12,7 @@ import (
 	"net/url"
 	"time"
 
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 )
 
 // Response is the structure of JSON returned from API

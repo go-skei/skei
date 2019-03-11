@@ -8,11 +8,11 @@ import (
 	"github.com/Unknwon/com"
 	"github.com/Unknwon/paginater"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/context"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/context"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 )
 
 const (

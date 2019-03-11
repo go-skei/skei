@@ -21,13 +21,13 @@ menu:
 来管理依赖，因此所有依赖项都被工具自动 copy 在 vendor 子目录下。用下面的命令来下载源码：
 
 ```
-go get -d code.gitea.io/gitea
+go get -d code.skei.dev/skei
 ```
 
 然后你可以在 Github 上 fork [Gitea 项目](https://github.com/go-gitea/gitea)，之后可以通过下面的命令进入源码目录：
 
 ```
-cd $GOPATH/src/code.gitea.io/gitea
+cd $GOPATH/src/code.skei.dev/skei
 ```
 
 要创建 pull requests 你还需要在源码中新增一个 remote 指向你 Fork 的地址，直接推送到 origin 的话会告诉你没有写权限：

@@ -4,21 +4,21 @@
 // license that can be found in the LICENSE file.
 
 // Gitea (git with a cup of tea) is a painless self-hosted Git Service.
-package main // import "code.gitea.io/gitea"
+package main // import "code.skei.dev/skei"
 
 import (
 	"os"
 	"runtime"
 	"strings"
 
-	"code.gitea.io/gitea/cmd"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/cmd"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/setting"
 
 	// register supported doc types
-	_ "code.gitea.io/gitea/modules/markup/csv"
-	_ "code.gitea.io/gitea/modules/markup/markdown"
-	_ "code.gitea.io/gitea/modules/markup/orgmode"
+	_ "code.skei.dev/skei/modules/markup/csv"
+	_ "code.skei.dev/skei/modules/markup/markdown"
+	_ "code.skei.dev/skei/modules/markup/orgmode"
 
 	"github.com/urfave/cli"
 )

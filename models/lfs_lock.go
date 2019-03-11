@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"code.gitea.io/gitea/modules/log"
+	"code.skei.dev/skei/modules/log"
 	api "code.gitea.io/sdk/gitea"
 	"github.com/go-xorm/xorm"
 )

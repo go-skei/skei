@@ -9,7 +9,7 @@ import (
 	"os"
 	"strconv"
 
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/blevesearch/bleve"
 	"github.com/blevesearch/bleve/analysis/token/unicodenorm"

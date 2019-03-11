@@ -6,7 +6,7 @@ package base
 
 import (
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 )
 
 // Notifier defines an interface to notify receiver

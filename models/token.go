@@ -9,8 +9,8 @@ import (
 
 	gouuid "github.com/satori/go.uuid"
 
-	"code.gitea.io/gitea/modules/base"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/modules/base"
+	"code.skei.dev/skei/modules/util"
 )
 
 // AccessToken represents a personal access token.

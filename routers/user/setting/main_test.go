@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"code.gitea.io/gitea/models"
+	"code.skei.dev/skei/models"
 )
 
 func TestMain(m *testing.M) {

@@ -7,9 +7,9 @@ package repo
 import (
 	"testing"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/auth"
-	"code.gitea.io/gitea/modules/test"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/auth"
+	"code.skei.dev/skei/modules/test"
 )
 
 func TestNewReleasePost(t *testing.T) {

@@ -6,8 +6,8 @@
 package private
 
 import (
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/util"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/util"
 
 	macaron "gopkg.in/macaron.v1"
 )

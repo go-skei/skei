@@ -7,8 +7,8 @@ package repo
 import (
 	"net/http"
 
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/context"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/context"
 )
 
 // IssueStopwatch creates or stops a stopwatch for the given issue.

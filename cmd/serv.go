@@ -15,11 +15,11 @@ import (
 	"time"
 
 	"code.gitea.io/git"
-	"code.gitea.io/gitea/models"
-	"code.gitea.io/gitea/modules/log"
-	"code.gitea.io/gitea/modules/pprof"
-	"code.gitea.io/gitea/modules/private"
-	"code.gitea.io/gitea/modules/setting"
+	"code.skei.dev/skei/models"
+	"code.skei.dev/skei/modules/log"
+	"code.skei.dev/skei/modules/pprof"
+	"code.skei.dev/skei/modules/private"
+	"code.skei.dev/skei/modules/setting"
 
 	"github.com/Unknwon/com"
 	"github.com/dgrijalva/jwt-go"
